@@ -1,16 +1,15 @@
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
+import Main from '../components/Main';
 import Navbar from '../components/Navbar';
-import { APIInvestmentType } from '../types/investmentTypes';
+import { APIInvestmentType, RowValueType } from '../types/investmentTypes';
 
 type Props = {
-  data: APIInvestmentType;
+  data: Array<RowValueType>;
 };
 
 const Home: NextPage<Props> = ({ data }) => {
-  console.log(data);
-
   return (
     <div>
       <Head>
@@ -20,6 +19,7 @@ const Home: NextPage<Props> = ({ data }) => {
       </Head>
       <Navbar />
       <Header />
+      <Main data={data} />
     </div>
   );
 };
@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const data: APIInvestmentType = await response.json();
 
   return {
-    props: { data },
+    props: { data: data.tableValues },
   };
 };
 

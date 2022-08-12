@@ -7,7 +7,9 @@ const Navbar = () => {
     <div className="navbar px-0 mb-2 md:mb-4">
       <Container>
         <div className="flex-1">
-          <p className="text-2xl md:text-3xl font-medium">Investio</p>
+          <p className="text-2xl md:text-3xl font-medium text-primary">
+            Invest<span className="text-neutral">IO</span>
+          </p>
         </div>
         <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">

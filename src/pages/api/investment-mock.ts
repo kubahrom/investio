@@ -4,22 +4,20 @@ import { deleteNewLine, getData } from '../../util/scrapeDataUtils';
 import type { RowValueType } from '../../types/investmentTypes';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const data = {
-    tableValues: [
-      {
-        bank: {
-          name: 'UniCredit Bank',
-          type: 'Účet START, OPEN, TOP',
-          link: 'https://www.mesec.cz/produkty/sporici-ucty/ucet-start-open-top-unicredit-bank/',
-          imageUrl: 'https://i.iinfo.cz/images/243/unicredit-1-thumb.png',
-        },
-        initialValue: '0 Kč',
-        interestRate: '5,5 %',
-        card: 'ano',
-        interestAfterTax: '2 388,24 Kč',
+  const data = [
+    {
+      bank: {
+        name: 'Československá obchodní banka, a. s.',
+        type: 'Duo Profit (s investováním)',
+        link: 'https://www.mesec.cz/produkty/sporici-ucty/duo-profit-csob/',
+        imageUrl: 'https://i.iinfo.cz/images/286/csob-1-thumb.png',
       },
-    ],
-  };
+      initialValue: '30 000 Kč',
+      interestRate: '4,5 %',
+      card: 'ne',
+      interestAfterTax: '1 946,39 Kč',
+    },
+  ];
 
   return res.status(200).json({
     tableValues: data,
