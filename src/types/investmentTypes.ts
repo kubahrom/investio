@@ -12,3 +12,7 @@ export type RowValueType = {
   card: string;
   interestAfterTax: string;
 };
+
+export type APIInvestmentType = {
+  tableValues: RowValueType[];
+};
