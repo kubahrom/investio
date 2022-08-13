@@ -12,7 +12,7 @@ const Main: React.FC<Props> = ({ data }) => {
   return (
     <main>
       <Container>
-        <div className="py-4 md:py-8">
+        <div className="py-4 md:py-8 grid gap-4 md:gap-8">
           {data.map((row, index) => (
             <BankCard data={row} key={index} />
           ))}
