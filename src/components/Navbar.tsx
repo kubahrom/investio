@@ -4,8 +4,8 @@ import Container from './Container';
 
 const Navbar = () => {
   return (
-    <div className="navbar px-0 mb-2 md:mb-4">
-      <Container>
+    <Container>
+      <div className="flex mb-2 md:mb-4 pt-4 md:pt-6 items-center">
         <div className="flex-1">
           <p className="text-2xl md:text-3xl font-medium text-primary">
             Invest<span className="text-neutral">IO</span>
@@ -25,8 +25,8 @@ const Navbar = () => {
             </label>
           </div>
         </div>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

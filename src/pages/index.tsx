@@ -9,6 +9,9 @@ type Props = {
   data: Array<RowValueType>;
 };
 
+// FIXME: Responsive cards
+// FIXME: spacing within cards? layout
+
 const Home: NextPage<Props> = ({ data }) => {
   return (
     <div>
@@ -25,7 +28,7 @@ const Home: NextPage<Props> = ({ data }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await fetch(`${process.env.URL}/api/investment-mock`);
+  const response = await fetch(`${process.env.URL}/api/investment`);
   const data: APIInvestmentType = await response.json();
 
   return {
