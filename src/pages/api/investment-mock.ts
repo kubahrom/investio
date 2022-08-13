@@ -10,7 +10,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         name: 'Československá obchodní banka, a. s.',
         type: 'Duo Profit (s investováním)',
         link: 'https://www.mesec.cz/produkty/sporici-ucty/duo-profit-csob/',
-        imageUrl: 'https://i.iinfo.cz/images/286/csob-1-thumb.png',
       },
       initialValue: '30 000 Kč',
       interestRate: '4,5 %',

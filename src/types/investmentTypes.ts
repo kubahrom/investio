@@ -2,7 +2,6 @@ export type RowBankType = {
   name: string;
   type: string;
   link: string;
-  imageUrl: string;
 };
 
 export type RowValueType = {
