@@ -17,7 +17,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     $('.product', htmlString).each((_, el) => {
       let rowValues: RowValueType = {
-        bank: { name: '', type: '', link: '', imageUrl: '' },
+        bank: { name: '', type: '', link: '' },
         initialValue: '',
         interestRate: '',
         card: '',
@@ -29,14 +29,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       rowValues.bank.link =
         url + getData($, el, ['td:nth-child(1)', 'div', 'a'], 'link');
 
-      rowValues.bank.imageUrl = getData(
-        $,
-        el,
-        ['td:nth-child(1)', 'div', 'img'],
-        'img'
-      );
       rowValues.initialValue = getData($, el, 'td:nth-child(2)');
-      rowValues.interestRate = getData($, el, 'td:nth-child(3)');
+      const interestRate = getData($, el, 'td:nth-child(3)');
+      rowValues.interestRate = interestRate.replace(/\%.*/, '%');
       rowValues.card = getData($, el, 'td:nth-child(4)');
       rowValues.interestAfterTax = getData($, el, 'td:nth-child(5)');
 

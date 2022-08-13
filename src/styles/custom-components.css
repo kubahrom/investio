@@ -1,0 +1,7 @@
+@layer components {
+  .bank-logo {
+    & svg {
+      @apply w-full h-full;
+    }
+  }
+}

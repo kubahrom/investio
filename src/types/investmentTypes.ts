@@ -2,7 +2,6 @@ export type RowBankType = {
   name: string;
   type: string;
   link: string;
-  imageUrl: string;
 };
 
 export type RowValueType = {
@@ -11,4 +10,8 @@ export type RowValueType = {
   interestRate: string;
   card: string;
   interestAfterTax: string;
+};
+
+export type APIInvestmentType = {
+  tableValues: RowValueType[];
 };
