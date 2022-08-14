@@ -15,3 +15,18 @@ export type RowValueType = {
 export type APIInvestmentType = {
   tableValues: RowValueType[];
 };
+
+// Temporary types
+
+export type SavingsAccountType = {
+  name: string;
+  type: string;
+  interestRate: string;
+  interestAfterTax: string;
+  table: SavingsAccountTableType;
+};
+
+export type SavingsAccountTableType = {
+  range: string;
+  value: string;
+}[];

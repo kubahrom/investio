@@ -7,14 +7,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+type SavingsAccountTable {
+  range     String
+  value     String
+}
+
 type SavingsAccount {
   name              String
   type              String
-  link              String
-  initialValue      String
   interestRate      String
   interestAfterTax  String
-  card              String
+  table             SavingsAccountTable[]
 }
 
 model savingsAccounts {
