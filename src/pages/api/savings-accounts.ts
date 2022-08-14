@@ -26,6 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         type: '',
         interestRate: '',
         interestAfterTax: '',
+        note: '',
         table: [],
       };
 
@@ -34,6 +35,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       const interestRate = getData($, el, 'td:nth-child(2)');
       rowValues.interestRate = interestRate.replace(/\%.*/, '%');
       rowValues.interestAfterTax = getData($, el, 'td:nth-child(5)');
+      rowValues.note = getData($, el, 'td:nth-child(4)');
 
       tableURLS.push(url + getData($, el, ['td:nth-child(3)', 'a'], 'link'));
 

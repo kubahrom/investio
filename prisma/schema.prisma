@@ -18,6 +18,7 @@ type SavingsAccount {
   interestRate      String
   interestAfterTax  String
   table             SavingsAccountTable[]
+  note             String
 }
 
 model savingsAccounts {

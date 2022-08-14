@@ -16,7 +16,7 @@ export type APIInvestmentType = {
   tableValues: RowValueType[];
 };
 
-// Temporary types
+// FIXME: clean types types
 
 export type SavingsAccountType = {
   name: string;
@@ -24,6 +24,7 @@ export type SavingsAccountType = {
   interestRate: string;
   interestAfterTax: string;
   table: SavingsAccountTableType;
+  note: string;
 };
 
 export type SavingsAccountTableType = {
