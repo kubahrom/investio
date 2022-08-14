@@ -1,9 +1,9 @@
 import React from 'react';
-import { RowValueType } from '../types/investmentTypes';
+import { SavingsAccountType } from '../types/investmentTypes';
 import BankLogo from './BankLogo';
 
 type Props = {
-  data: RowValueType;
+  data: SavingsAccountType;
 };
 
 const BankCard: React.FC<Props> = ({ data }) => {
@@ -12,14 +12,14 @@ const BankCard: React.FC<Props> = ({ data }) => {
     <div className="bg-base-100 border-l-4 md:border-l-8 border-primary rounded-xl shadow-md p-2 md:p-4 lg:w-[50em]">
       <div className="flex">
         <div className="flex-shrink-0 w-14 xs:w-16 md:w-28 lg:w-32 mr-2 md:mr-4 lg:mr-8 place-self-center">
-          <BankLogo bank={data.bank.name} />
+          <BankLogo bank={data.name} />
         </div>
         <div className="w-full">
           <p className="text-sm md:text-base font-medium text-info-content">
-            {data.bank.name}
+            {data.name}
           </p>
           <p className="text-md md:text-2xl font-bold text-primary">
-            {data.bank.type}
+            {data.type}
           </p>
           <p className="text-sm md:text-base  text-neutral md:py-1">
             Maximální výše vkladu:{' '}
@@ -29,14 +29,12 @@ const BankCard: React.FC<Props> = ({ data }) => {
             <p className="text-1xl font-medium text-neutral">
               Přehled úrokových sazeb
             </p>
-            <div className="flex gap-8">
-              <span className="">4,58 %</span>
-              <span className="">0 - 400 000</span>
-            </div>
-            <div className="flex gap-8">
-              <span className="">4,08 %</span>
-              <span>400 001 - neomezeno</span>
-            </div>
+            {data.table.map((row, index) => (
+              <div key={index} className="flex gap-8">
+                <span className="w-11">{row.value}</span>
+                <span>{row.range}</span>
+              </div>
+            ))}
           </div>
         </div>
         <div className="md:px-6 flex-shrink-0 text-right ml-2  place-self-center">

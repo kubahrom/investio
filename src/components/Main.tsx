@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Container from './Container';
-import { RowValueType } from '../types/investmentTypes';
+import { SavingsAccountType } from '../types/investmentTypes';
 import BankCard from './BankCard';
 
 type Props = {
-  data: Array<RowValueType>;
+  data: Array<SavingsAccountType>;
 };
 
 const Main: React.FC<Props> = ({ data }) => {

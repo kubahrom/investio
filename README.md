@@ -6,15 +6,19 @@ Aplikace pro zobrazení informací dostupných o spořících účtů aktuální
 
 - Vytvoření základní API s daty ✔️
 
-- Zobrazení aktuálně dostupných dat (hromadně) 🚧
+- Zobrazení aktuálně dostupných dat (hromadně) ✔️
 
-- Podrobnější zobrazení API s tabulkou pásmových úročení 🚧
+- Ukládání dat (MongoDB, Prisma) ✔️
+
+- Podrobnější API s tabulkou pásmových úročení ✔️
+
+- Přihlašování / Registrace (Next Auth) BE 🚧
+
+- Přihlašování / Registrace (Next Auth) FE 🚧
+
+- Filtrování na FE 🚧
 
 - Zobrazení aktuálně dostupných dat (pro každou nabídku zvlášť) 🚧
-
-- Ukládání dat 🚧
-
-- Přihlašování / Registrace (Next Auth) 🚧
 
 - Emailová notifikace v případě nové nabídky (pravděpodobně pomocí CRON jobs Github Actions) 🚧
 

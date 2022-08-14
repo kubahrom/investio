@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type SavingsAccountTable {
+  range     String
+  value     String
+}
+
+type SavingsAccount {
+  name              String
+  type              String
+  interestRate      String
+  interestAfterTax  String
+  table             SavingsAccountTable[]
+  note             String
+}
+
+model savingsAccounts {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  list   SavingsAccount[]
+  scrapeDate        DateTime @default(now())
+}

@@ -3,10 +3,10 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Navbar from '../components/Navbar';
-import { APIInvestmentType, RowValueType } from '../types/investmentTypes';
+import { APISavingsAccountType } from '../types/investmentTypes';
 
 type Props = {
-  data: Array<RowValueType>;
+  data: APISavingsAccountType;
 };
 
 const Home: NextPage<Props> = ({ data }) => {
@@ -19,17 +19,17 @@ const Home: NextPage<Props> = ({ data }) => {
       </Head>
       <Navbar />
       <Header />
-      <Main data={data} />
+      <Main data={data.list} />
     </div>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await fetch(`${process.env.URL}/api/investment-mock`);
-  const data: APIInvestmentType = await response.json();
+  const response = await fetch(`${process.env.URL}/api/savings-accounts`);
+  const data: APISavingsAccountType = await response.json();
 
   return {
-    props: { data: data.tableValues },
+    props: { data },
   };
 };
 
