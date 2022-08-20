@@ -8,7 +8,6 @@ type Props = {
 
 const BankCard: React.FC<Props> = ({ data }) => {
   return (
-    // <div className="card bg-base-100 border-l-8 border-primary rounded-xl shadow-md w-[50em]">
     <div className="rounded-xl border-l-4 border-primary bg-base-100 p-2 shadow-md md:border-l-8 md:p-4">
       <div className="flex">
         <div className="mr-2 w-14 flex-shrink-0 place-self-center xs:w-16 md:mr-4 md:w-28 lg:mr-8 lg:w-32">

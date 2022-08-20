@@ -25,7 +25,7 @@ const Home: NextPage<Props> = ({ data }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const response = await fetch(`${process.env.URL}/api/savings-accounts`);
+  const response = await fetch(`${process.env.URL}/api/savings-accounts-mock`);
   const data: APISavingsAccountType = await response.json();
 
   return {
