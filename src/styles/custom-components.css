@@ -1,7 +1,22 @@
 @layer components {
   .bank-logo {
     & svg {
-      @apply w-full h-full;
+      @apply h-full w-full;
+    }
+  }
+
+  .edit {
+    @apply relative overflow-hidden;
+    transition: padding-right 200ms ease-in-out;
+
+    &:hover {
+      padding-right: 4rem;
+    }
+
+    &:after {
+      left: 2.4rem;
+      position: absolute;
+      transition: color 100ms ease-in-out;
     }
   }
 }

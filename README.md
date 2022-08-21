@@ -12,11 +12,13 @@ Aplikace pro zobrazení informací dostupných o spořících účtů aktuální
 
 - Podrobnější API s tabulkou pásmových úročení ✔️
 
+- Filtrování na FE 🚧
+
+- Kalkulace úroku bez daně na základě úrokových pásem 🚧
+
 - Přihlašování / Registrace (Next Auth) BE 🚧
 
 - Přihlašování / Registrace (Next Auth) FE 🚧
-
-- Filtrování na FE 🚧
 
 - Zobrazení aktuálně dostupných dat (pro každou nabídku zvlášť) 🚧
 
