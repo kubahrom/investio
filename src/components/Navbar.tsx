@@ -5,15 +5,15 @@ import Container from './Container';
 const Navbar = () => {
   return (
     <Container>
-      <div className="flex mb-2 md:mb-4 pt-4 md:pt-6 items-center">
+      <div className="mb-2 flex items-center pt-4 md:mb-4 md:pt-6">
         <div className="flex-1">
-          <p className="text-2xl md:text-3xl font-medium text-primary">
+          <p className="text-2xl font-medium text-primary md:text-3xl">
             Invest<span className="text-neutral">IO</span>
           </p>
         </div>
         <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <label tabIndex={0} className="avatar btn btn-ghost btn-circle">
               <div className="w-10 rounded-full">
                 <Image
                   src="https://placeimg.com/80/80/people"
