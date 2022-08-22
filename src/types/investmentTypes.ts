@@ -2,6 +2,7 @@ export type APISavingsAccountType = {
   id: string;
   list: SavingsAccountType[];
   scrapeDate: string;
+  lastCheck: string;
 };
 
 export type SavingsAccountType = {
@@ -10,26 +11,11 @@ export type SavingsAccountType = {
   interestRate: string;
   interestAfterTax: string;
   table: SavingsAccountTableType;
-  note: string;
+  interestRateFreq: string;
+  // note: string;
 };
 
 export type SavingsAccountTableType = {
   range: string;
   value: string;
 }[];
-
-// FIXME: delete after cleanup APIs
-
-type RowBankType = {
-  name: string;
-  type: string;
-  link: string;
-};
-
-export type RowValueType = {
-  bank: RowBankType;
-  initialValue: string;
-  interestRate: string;
-  card: string;
-  interestAfterTax: string;
-};

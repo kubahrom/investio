@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const data = {
-    id: '62f93037894f70af78749560',
+    id: '6303736f9de99c993946d9bb',
     list: [
       {
         name: 'UniCredit Bank',
@@ -19,7 +19,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: 'Jde o standardní běžný platební účet, který je otevřený jako druhý účet ke běžnému účtu typu START, OPEN nebo TOP (za ty tři jmenované se platí poplatek 0-299 Kč měsíčně podle typu účtu nebo splnění podmínek).Akce platí od 1. 7. 2022 do 30. 9. 2022 a jen pro nové klienty, kteří ještě nemají v UniCredit Bank účet.Úroková sazba v rámci akce platí do 30. 6. 2023.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'MONETA Money Bank',
@@ -36,7 +36,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '2.1%',
           },
         ],
-        note: 'Spořicí účet "Spoříto" = online založený účet pro nové klienty banky.Spořicí účet "Spoření" = účet založený na pobočce, nebo stávající klienti banky s nově založeným účtem (jakkoli).Jde však stále o jeden a ten samý typ spořicího účtu.Podmínky:- příjem na běžném účtu min. 20 000 Kč měsíčně- 5 plateb kartou měsíčně',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'mBank',
@@ -53,7 +53,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Při překročení naspořené částky 100 000 Kč se CELÁ částka úročí sazbou 0,01 % p.a. do doby, než dojde k její snížení na limitní hranici.Máte možnost založit max. 8 těchto spořicích účtů.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Artesa, spořitelní družstvo',
@@ -66,7 +66,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '4.75%',
           },
         ],
-        note: 'Bezhotovostní platby lze posílat pouze na dva předem stanovené účty s možností změny těchto účtů 2x měsíčně. Část vkladu převyšující desetinásobek členského podílu se neúročí.Základní členský vklad je 1000 Kč a vrací se. Na vklad se uplatní tzv. "Pravidlo 1:10", ale členský vklad není pojištěn.Příklad: Na spoření ve výši 1 mil. Kč je potřeba vložit dalších 100 000 Kč do základního kapitálu družstva, jako neúročený a nepojištěný členský vklad.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Expobank',
@@ -79,7 +79,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '4.61%',
           },
         ],
-        note: 'Tip: Za založení NEO účtu dostanete od banky bonus 500 Kč. Stačí splnit jednoduché podmínky a využít platný promo kód Expobank na bonus 500 Kč (vygeneruje se automaticky po kliknutí na náš odkaz).Přečtěte si, jak to funguje.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'TRINITY BANK',
@@ -96,7 +96,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '4.08%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Fio banka, a.s.',
@@ -121,7 +121,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.2%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Československá obchodní banka, a. s.',
@@ -134,7 +134,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '4.5%',
           },
         ],
-        note: 'Podmínky:Investovat do podílových fondů skupiny KBC v objemu min. 30 000 Kč s tím, že musíte uhradit minimálně 1% vstupní poplatek.Pro fondy- ČSOB Opatrný zodpovědný- ČSOB Premium Opatrný zodpovědný- ČSOB Odvážný zodpovědný a- ČSOB Premium Odvážný zodpovědnýplatí podmínka minimální uhrazené výše vstupního poplatku ve výši 0,5 %Spořit můžete maximálně tolik, kolik investujete (investice musí být stejná nebo vyšší než spoření).Výše částky investované do vybraných podílových fondů musí být stejná nebo vyšší, než je výše zůstatku na spořicím účtu.Akční úroková sazba platí rok od založení účtu.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Banka CREDITAS',
@@ -151,7 +151,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '3.1%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Raiffeisenbank a.s.',
@@ -172,7 +172,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Úroková sazba platí při splnění těchto podmínek:1. Máte CHYTRÝ účet nebo AKTIVNÍ účet nebo studentský účet:- alespoň 3 transakce debetní nebo kreditní kartou,- transakce musí být v daném měsíci i zaúčtované.2. Máte PRÉMIOVÝ účet:- měsíčně obrat 50 000 Kč v 1 nebo maximálně ve 2 transakcích. V daném měsíci banka sečte 2 nejvyšší příchozí transakce na účtu.3. Máte EXKLUZIVNÍ účet:- objem vašich vkladů a investic u Raiffeisenbank je min. 1 500 000 Kč měsíčně',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Hello bank!',
@@ -189,7 +189,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'J&T BANKA',
@@ -202,7 +202,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '4.25%',
           },
         ],
-        note: 'Minimální zůstatek ani vklad není omezen při splnění jedné z podmínek:- investice ve výši min. 100 000 Kč- nebo jiný vklad ve výši min. 1 mil. Kč.Faktická výpovědní lhůta je 1 den.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'J&T BANKA',
@@ -215,7 +215,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '4.25%',
           },
         ],
-        note: 'Faktická výpovědní lhůta je 1 den.Minimální zůstatek je 1 mil. Kč.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Česká spořitelna, a.s.',
@@ -232,7 +232,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: '1. podmínka: Pravidelně investujete min. 300 Kč měsíčně z majetkového účtu České spořitelny.2. podmínka:Patříte do segmentu Exclusive:- pravidelně do ČS posíláte své příjmy v měsíční výši alespoň 45 000 Kč- nebo máte naspořeno nebo investováno \ufeff750 000 Kč nebo více- nebo jste si od ČS půjčili 1,5 mil Kč a více',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Česká spořitelna, a.s.',
@@ -249,7 +249,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: '1. podmínka:Máte "Plus účet České spořitelny".2. podmínka:Pravidelně investujete min. 300 Kč měsíčně z majetkového účtu České spořitelny.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Raiffeisenbank a.s. (Equa bank)',
@@ -266,7 +266,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Úroková sazba platí za podmínky, že v daném kalendářním měsíci neodejde z tohoto účtu žádná platba (ani jako platba mezi spořicím a běžným účtem). Jinak se snižuje na 0,10 % p.a.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'mBank',
@@ -283,7 +283,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Air Bank, a. s.',
@@ -304,7 +304,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: 'Podmínkou úrokové sazby je 5x měsíčně zaplatit platební kartou Air Bank vydanou k běžnému účtu. V opačném případě je úroková sazba 0 % p.a.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Komerční banka, a.s.',
@@ -321,7 +321,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: '',
+        interestRateFreq: 'čtvrtletně',
       },
       {
         name: 'Fio banka, a.s.',
@@ -334,7 +334,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '3.5%',
           },
         ],
-        note: 'Měsíčně můžete provést max. 4 odchozí platby/ hotovostní výběry.Úrokové sazby platí od 1. 5. 2022.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Československá obchodní banka, a. s.',
@@ -351,7 +351,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.15%',
           },
         ],
-        note: 'Podmínkou je používání mobilní aplikace ČSOB Smart (mobilní bankovnictví).Po dosažení daného pásma je uvedenou sazbou úročen celý zůstatek účtu. Část zůstatku nad 1 000 000 Kč je však úročena sazbou 0,15 %. (Pozor, naše kalkulačka toto neumí přesně spočítat.)',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Československá obchodní banka, a. s.',
@@ -368,7 +368,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.15%',
           },
         ],
-        note: 'Podmínkou je vedení Plus Konta nebo Poštovního účtu. A k tomu měsíční investice min. 1000 Kč do podílových fondů ČSOB nebo KBC.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Komerční banka, a.s.',
@@ -389,7 +389,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.02%',
           },
         ],
-        note: '',
+        interestRateFreq: 'čtvrtletně',
       },
       {
         name: 'Česká spořitelna, a.s.',
@@ -406,7 +406,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Pouze pro klienty segmentu Erste Premier.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Česká spořitelna, a.s.',
@@ -423,7 +423,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Podmínka: máte "Plus účet České spořitelny".',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Česká spořitelna, a.s.',
@@ -440,7 +440,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Podmínka:Patříte do segmentu Exclusive:- pravidelně do ČS posíláte své příjmy v měsíční výši alespoň 45 000 Kč- nebo máte naspořeno nebo investováno \ufeff750 000 Kč nebo více- nebo jste si od ČS půjčili 1,5 mil Kč a více',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Československá obchodní banka, a. s.',
@@ -457,7 +457,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.15%',
           },
         ],
-        note: 'Podmínkou je vedení Plus Konta nebo Poštovního účtu.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Raiffeisenbank a.s. (Equa bank)',
@@ -474,7 +474,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.1%',
           },
         ],
-        note: 'Pro získání úrokové sazby 3 % p.a. je nutné 3x v měsíci zaplatit kartou, nebo mít v Equa bank investice min. hodnotě 50 000 Kč, jinak se sazba snižuje na 0,10 %.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Československá obchodní banka, a. s.',
@@ -491,7 +491,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.15%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'TRINITY BANK',
@@ -504,7 +504,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '2.58%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'UniCredit Bank',
@@ -521,7 +521,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: '',
+        interestRateFreq: 'čtvrtletně',
       },
       {
         name: 'Československá obchodní banka, a. s.',
@@ -538,7 +538,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.15%',
           },
         ],
-        note: 'Po dosažení daného pásma je uvedenou sazbou úročen celý zůstatek účtu. Část zůstatku nad 1 000 000 Kč je však úročena sazbou 0,15 %. (Pozor, naše kalkulačka toto neumí přesně spočítat.)',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'TRINITY BANK',
@@ -551,7 +551,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '1.78%',
           },
         ],
-        note: '',
+        interestRateFreq: 'denně',
       },
       {
         name: 'MONETA Money Bank',
@@ -572,7 +572,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.1%',
           },
         ],
-        note: 'Podmínkou je vedení platebního účtu Genius Gold a měsíční příjem na něj min. 35 000 Kč.A dále min. 500 000 Kč investovaných v MMB do podílových fondů.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Komerční banka, a.s.',
@@ -593,7 +593,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: 'Úroková sazba platí v případě, že vložíte prostředky do níže definovaných fondů na základě smlouvy uzavřené s Komerční bankou nebo v zastoupení Komerční bankou vedených v českých korunách nebo do níže definovaných smluv:Amundi CR Dluhopisový PlusAmundi CR Balancovaný konzervativníKB DluhopisovýAmundi CR Akciový-Střední a východní EvropaKB PSA 2-PopularKB PSA 4-PopularKB Privátní správa aktiv 2-ExclusiveKB Privátní správa aktiv 4-ExclusiveKB Privátní správa aktiv 5D-Exclusive AKB Privátní správa aktiv 5D-Exclusive DAmundi Funds Euro Corporate Bond CZKAmundi Funds Euro High Yield Bond CZKAmundi Funds Euro High Yield Short Term Bond CZKAmundi Funds Global Aggregate Bond CZKFirst Eagle Amundi International FundFirst Eagle Amundi Income Builder FundAmundi Funds Emerging World Equity CZKAmundi Funds Equity Global Luxury and LifestyleAmundi Funds Equity Global ResourcesAmundi Funds Japan Equity Value CZKAmundi Index MSCI North AmericaKB PSA 5D-Popular ACPR Global Silver Age(CZK)CPR Invest - Global Disruptive OpportunitiesKB PSA Flexibilní - PSA Flexibilní - ExclusiveKBI Water FundAmundi Fund Solutions - Diversified Growth A ND HDG¨Amundi Fund Solutions - Conservative A ND HDGAmundi Solutions - Balanced A ND HDGAmundi Funds Pioneer US Equity Research Value CZKAmundi Funds Emerging Markets Local Currency Bond CZKAmundi Funds Top European Players CZKRealitní fond KB 3, KB Private Equity 3CPR Invest - Food For GenerationsAmundi CR BalancovanýAmundi Funds Global Aggreate BondAmundi CR All-Star SelectionAmundi Funds Absolute Return Multi-StrategyAmundi Funds Pioneer Global Equity A hgdCPR Invest – MedTechAmundi Funds Multi-Asset Sustainable FutureAmundi Funds Polen Capital Global GrowthCPR Invest - Global ResourcesCPR Invest - Global LifestylesCPR Global Gold MinesAmundi Fund Solutions - Buy and Watch US High Yield OpportunitiesInvestiční živ. Pojištění Vital InvestPoj. Smlouva pro případ smrti nebo dožití (včetně var. Platinum i inv. strategie ExclusiveInvestiční živ. pojištění BroučekPoj. smlouva pro případ smrti nebo dožití ve prospěch pojištěného Kapitál. živ. pojištění Vital PremiumPoj. smlouva pro případ smrti nebo dožití (kromě CZK také varianta v USD a EUR)Investiční životní pojištění Vital PlatinumU pojištění v cizích měnách se pro účely výpočtu nároku na Bonus použije kurz ČNB deviza střed platný v den sjednání pojištění.Podmínkou založení je běžný účet u KB bez investiční historie.Základní úrok (0-0,70 % p.a.) se připisuje čtvtletně, bonusový úrok (ten zbytek) pololetně.Nezapomeňte, že za investování platíte poplatky.Bonus je počítán:- z nižší z částek vkladu do vybraných investičních produktů za dané a předcházející pololetí- a nejnižšího zůstatku spořicího konta za dané pololetí.',
+        interestRateFreq: 'pololetně',
       },
       {
         name: 'MONETA Money Bank',
@@ -614,7 +614,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.1%',
           },
         ],
-        note: 'Podmínkou je vedení platebního účtu Genius Gold a měsíční příjem na něj min. 35 000 Kč.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'MONETA Money Bank',
@@ -631,7 +631,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.1%',
           },
         ],
-        note: 'Podmínkou je vedení platebního účtu Genius Gold.',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Česká spořitelna, a.s.',
@@ -648,7 +648,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Raiffeisenbank a.s.',
@@ -665,7 +665,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Raiffeisenbank a.s. (Equa bank)',
@@ -682,7 +682,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '1%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'UniCredit Bank',
@@ -699,7 +699,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: '',
+        interestRateFreq: 'čtvrtletně',
       },
       {
         name: 'Oberbank',
@@ -728,7 +728,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.05%',
           },
         ],
-        note: 'Bez výpovědní lhůty',
+        interestRateFreq: 'čtvrtletně',
       },
       {
         name: 'Oberbank',
@@ -741,7 +741,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0.01%',
           },
         ],
-        note: 'Úrokovou sazbu stanovuje každá pobočka individuálně. Kompetenci zvýšit ji má poradce a ředitel pobočky. Maximální dosažitelná sazba je 0,40 % p.a. pro vklad nad 1,5 mil. Kč.',
+        interestRateFreq: 'čtvrtletně',
       },
       {
         name: 'Expobank',
@@ -762,7 +762,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
       {
         name: 'Expobank',
@@ -783,10 +783,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             value: '0%',
           },
         ],
-        note: '',
+        interestRateFreq: 'měsíčně',
       },
     ],
-    scrapeDate: '2022-08-14T17:26:14.752Z',
+    scrapeDate: '2022-08-22T12:15:43.321Z',
+    lastCheck: 'Poslední aktualizace: 11. 8. 2022',
   };
 
   return res.status(200).json(data);
