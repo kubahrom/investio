@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import Container from './Container';
-import { SavingsAccountType } from '../types/investmentTypes';
 import BankCard from './BankCard';
 import Filter from './Filter';
+import { SavingsAccountType } from '../types/savingsAccountsTypes';
 
 type Props = {
   data: Array<SavingsAccountType>;
