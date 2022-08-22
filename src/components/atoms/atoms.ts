@@ -6,5 +6,5 @@ export const amountToInterest = atom(50000);
 export const filterValues = atom<FilterValuesType>({
   search: '',
   order: 'interestAfterTax',
-  filterByName: ['mBank'],
+  filterByName: ['mBank', 'Ostatní'],
 });

@@ -3,7 +3,7 @@ import Collapse from '../icons/Collapse';
 import BanksGroup from './BanksGroup';
 
 const ShowBanks = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <div>

@@ -1,18 +1,19 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-const banks = [
-  'Česká spořitelna',
-  'ČSOB',
-  'Komerční banka',
-  'Raiffeisenbank',
-  'UniCredit Bank',
-  'Air Bank',
-  'Moneta',
-  'mBank',
-  'Fio banka',
-  'Ostatní',
-];
+// const banks = [
+//   'Česká spořitelna',
+//   'ČSOB',
+//   'Komerční banka',
+//   'Raiffeisenbank',
+//   'UniCredit Bank',
+//   'Air Bank',
+//   'Moneta',
+//   'mBank',
+//   'Fio banka',
+//   'Ostatní',
+// ];
+const banks = ['mBank', 'Ostatní'];
 
 const BanksGroup = () => {
   const { register } = useFormContext();

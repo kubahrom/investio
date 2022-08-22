@@ -8,7 +8,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         name: 'UniCredit Bank',
         type: 'Účet START, OPEN, TOP',
         interestRate: '5,5 %',
-        interestAfterTax: '2 388,24 Kč',
+        interestAfterTax: '2 204,24 Kč',
         table: [
           {
             range: '0 – 1000000',
