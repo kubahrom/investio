@@ -1,4 +1,5 @@
 import React from 'react';
+import { useFormContext } from 'react-hook-form';
 
 const banks = [
   'Česká spořitelna',
@@ -14,6 +15,8 @@ const banks = [
 ];
 
 const BanksGroup = () => {
+  const { register } = useFormContext();
+
   return (
     <div className="flex flex-row flex-wrap pt-2 xl:grid 2xl:grid-cols-2 2xl:gap-x-6">
       {banks.map((bank) => (
@@ -21,7 +24,8 @@ const BanksGroup = () => {
           <span className="label-text">{bank}</span>
           <input
             type="checkbox"
-            name="show-banks"
+            {...register('filterByName')}
+            value={bank}
             className="checkbox checkbox-primary mx-2"
           />
         </label>
