@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.7",
     "@prisma/client": "^4.2.1",
     "cheerio": "^1.0.0-rc.12",
     "daisyui": "^2.22.0",
+    "jotai": "^1.8.0",
     "next": "12.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.34.2",
+    "zod": "^3.18.0"
   },
   "devDependencies": {
     "@types/node": "18.6.5",
