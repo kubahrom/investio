@@ -6,6 +6,7 @@ type Props = {
   data: SavingsAccountType;
 };
 
+// TODO: dynamic interestRateAfterTax calculation, dynamic max value for amount input
 const BankCard: React.FC<Props> = ({ data }) => {
   return (
     <div className="rounded-xl border-l-4 border-primary bg-base-100 p-2 shadow-md md:border-l-8 md:p-4">
@@ -20,7 +21,13 @@ const BankCard: React.FC<Props> = ({ data }) => {
           <p className="text-md font-bold text-primary md:text-2xl">
             {data.type}
           </p>
-          <p className="text-sm text-neutral  md:py-1 md:text-base">
+          <p className="text-sm text-neutral  md:pt-2 md:text-base">
+            Připisování úroků:{' '}
+            <span className="block font-medium xs:inline">
+              {data.interestRateFreq}
+            </span>
+          </p>
+          <p className="text-sm text-neutral md:text-base">
             Maximální výše vkladu:{' '}
             <span className="block font-medium md:inline">400 000,00 Kč</span>
           </p>
