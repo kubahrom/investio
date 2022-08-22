@@ -12,6 +12,7 @@ type Props = {
 const Main: React.FC<Props> = ({ data }) => {
   const [rows, setRows] = useState(data.slice(0, 2));
 
+  // console.log(new Set(data.map((item) => item.interestRateFreq)));
   return (
     <main>
       <Container>

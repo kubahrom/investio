@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useAtom } from 'jotai';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { z } from 'zod';
 
 import { amountToInterest } from '../atoms/atoms';
 import Edit from '../icons/Edit';
@@ -55,7 +55,11 @@ const AmountToInterest = () => {
             min={0}
             step={0.01}
           />
-          <button type="submit" className="btn btn-primary btn-sm ml-2">
+          <button
+            type="submit"
+            className="btn btn-primary btn-sm ml-2"
+            aria-label="Potvrdit zadanou částku"
+          >
             Ok
           </button>
         </form>
@@ -65,6 +69,7 @@ const AmountToInterest = () => {
           <button
             className="edit btn btn-primary btn-sm ml-2 after:normal-case after:text-primary 
                      after:content-['Upravit'] hover:text-primary-content hover:after:text-primary-content"
+            aria-label="Upravit částku k úročení"
             onClick={() => setEdit(true)}
           >
             <Edit />
