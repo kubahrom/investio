@@ -1,13 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import * as cheerio from 'cheerio';
-import { getData, getTableData } from '../../util/scrapeDataUtils';
+import {
+  deleteNewLine,
+  getData,
+  getTableData,
+} from '../../util/scrapeDataUtils';
 import type { SavingsAccountType } from '../../types/investmentTypes';
 import { PrismaClient } from '@prisma/client';
 
 const url = 'https://www.mesec.cz';
 const fetchUrl =
   url +
-  '/produkty/sporici-ucty/?vyse_vkladu=50000&vypovedni_lhuta=0&doba_ulozeni=365&_sl1=max_dosazitelny_urok&_sl2=prehled_urokovych_sazeb&_sl3=poznamky';
+  '/produkty/sporici-ucty/?vyse_vkladu=50000&vypovedni_lhuta=0&doba_ulozeni=365&_sl1=max_dosazitelny_urok&_sl2=prehled_urokovych_sazeb&_sl3=zpusob_pripisovani_uroku&tridit=_calc1&smer=s';
 
 const prisma = new PrismaClient();
 
@@ -26,7 +30,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         type: '',
         interestRate: '',
         interestAfterTax: '',
-        note: '',
+        interestRateFreq: '',
         table: [],
       };
 
@@ -35,12 +39,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       const interestRate = getData($, el, 'td:nth-child(2)');
       rowValues.interestRate = interestRate.replace(/\%.*/, '%');
       rowValues.interestAfterTax = getData($, el, 'td:nth-child(5)');
-      rowValues.note = getData($, el, 'td:nth-child(4)');
+      rowValues.interestRateFreq = getData($, el, 'td:nth-child(4)');
 
       tableURLS.push(url + getData($, el, ['td:nth-child(3)', 'a'], 'link'));
 
       tableValues.push(rowValues);
     });
+
+    let lastCheck = deleteNewLine($('.design-bar--editors-footer').text());
+    lastCheck = lastCheck.substring(0, lastCheck.indexOf('Redakce'));
 
     // Data doesnt exist on the fetched page
     if (tableValues.length === 0) {
@@ -49,19 +56,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       });
     }
 
-    // Fetch table data
+    // // Fetch table data
     for (let i = 0; i < tableURLS.length; i++) {
       tableValues[i].table = (await getTableData(tableURLS[i])) || [];
     }
 
-    // Save data to database
+    // // Save data to database
     await prisma.savingsAccounts.create({
-      data: { list: tableValues },
+      data: { list: tableValues, lastCheck },
     });
 
     return res.status(200).json({
       message: 'Data scraped and saved successfully.',
-      // tableValues,
     });
   } catch (error) {
     console.log(error);

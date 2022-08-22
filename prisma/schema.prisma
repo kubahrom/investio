@@ -18,11 +18,13 @@ type SavingsAccount {
   interestRate      String
   interestAfterTax  String
   table             SavingsAccountTable[]
-  note             String
+  interestRateFreq  String
+  // note             String
 }
 
 model savingsAccounts {
   id                String @id @default(auto()) @map("_id") @db.ObjectId
   list   SavingsAccount[]
   scrapeDate        DateTime @default(now())
+  lastCheck         String
 }
