@@ -1,5 +1,5 @@
 import React from 'react';
-import { SavingsAccountType } from '../types/investmentTypes';
+import { SavingsAccountType } from '../types/savingsAccountsTypes';
 import BankLogo from './BankLogo';
 
 type Props = {

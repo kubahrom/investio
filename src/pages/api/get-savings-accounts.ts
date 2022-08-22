@@ -5,8 +5,9 @@ import {
   getData,
   getTableData,
 } from '../../util/scrapeDataUtils';
-import type { SavingsAccountType } from '../../types/investmentTypes';
+import type { SavingsAccountType } from '../../types/savingsAccountsTypes';
 import { PrismaClient } from '@prisma/client';
+import { getBankTag } from '../../util/prepareDataUtils';
 
 const url = 'https://www.mesec.cz';
 const fetchUrl =
@@ -27,6 +28,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     $('.product', htmlString).each((_, el) => {
       let rowValues: SavingsAccountType = {
         name: '',
+        tag: '',
         type: '',
         interestRate: '',
         interestAfterTax: '',
@@ -35,6 +37,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       };
 
       rowValues.name = getData($, el, ['td:nth-child(1)', 'div', 'small']);
+      rowValues.tag = getBankTag(rowValues.name);
       rowValues.type = getData($, el, ['td:nth-child(1)', 'div', 'a']);
       const interestRate = getData($, el, 'td:nth-child(2)');
       rowValues.interestRate = interestRate.replace(/\%.*/, '%');

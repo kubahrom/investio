@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import { SavingsAccountTableType } from '../types/investmentTypes';
+import { SavingsAccountTableType } from '../types/savingsAccountsTypes';
 
 export const deleteNewLine = (text: string) =>
   text.replace(/(\r\n|\n|\r)/gm, '');
