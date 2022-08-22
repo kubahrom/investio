@@ -7,6 +7,7 @@ export type APISavingsAccountType = {
 
 export type SavingsAccountType = {
   name: string;
+  tag: string;
   type: string;
   interestRate: string;
   interestAfterTax: string;

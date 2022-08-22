@@ -14,6 +14,7 @@ type SavingsAccountTable {
 
 type SavingsAccount {
   name              String
+  tag               String
   type              String
   interestRate      String
   interestAfterTax  String
