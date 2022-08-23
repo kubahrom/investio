@@ -34,12 +34,13 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
   }, [filterValue, data]);
 
   // console.log(new Set(data.map((item) => item.interestRateFreq)));
-  const test = calculateInterest(
-    50000,
-    rows[0].table[0].value,
-    rows[0].interestRateFreq,
-    rows[0].table
-  );
+  // FIXME: add atom for amount
+  // const test = calculateInterest(
+  //   50000,
+  //   rows[0].table[0].value,
+  //   rows[0].interestRateFreq,
+  //   rows[0].table
+  // );
 
   return (
     <div className="grid gap-4  md:gap-8   lg:w-[50em] xl:flex-shrink-0">

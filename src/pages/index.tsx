@@ -9,6 +9,7 @@ type Props = {
   data: APISavingsAccountType;
 };
 // FIXME: empty array (no data)
+// TODO: footer? link, dates
 const Home: NextPage<Props> = ({ data }) => {
   return (
     <div>

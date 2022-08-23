@@ -22,7 +22,7 @@ const schema = z.object({
   order: z.enum(['interestRate', 'interestAfterTax']),
   filterByName: z.array(z.string()),
 });
-
+// TODO: add filter by interest frequency
 const Filter = () => {
   const [filterValue, setFilterValue] = useAtom(filterValues);
   const methods = useForm<FormData>({
