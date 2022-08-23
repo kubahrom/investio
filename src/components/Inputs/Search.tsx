@@ -1,6 +1,9 @@
 import React from 'react';
+import { useFormContext } from 'react-hook-form';
 
 const Search = () => {
+  const { register } = useFormContext();
+
   return (
     <div className="form-control">
       <label className="label" htmlFor="filter-search">
@@ -26,7 +29,7 @@ const Search = () => {
         <input
           type="text"
           id="filter-search"
-          name="search"
+          {...register('search')}
           className="input input-bordered input-primary w-full"
         />
       </label>

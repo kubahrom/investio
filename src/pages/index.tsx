@@ -3,12 +3,13 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Navbar from '../components/Navbar';
-import { APISavingsAccountType } from '../types/investmentTypes';
+import { APISavingsAccountType } from '../types/savingsAccountsTypes';
 
 type Props = {
   data: APISavingsAccountType;
 };
-
+// FIXME: empty array (no data)
+// TODO: footer? link, dates
 const Home: NextPage<Props> = ({ data }) => {
   return (
     <div>

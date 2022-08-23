@@ -8,16 +8,18 @@ datasource db {
 }
 
 type SavingsAccountTable {
-  range     String
-  value     String
+  from      Int
+  to        Int  
+  value     Float
 }
 
 type SavingsAccount {
   name              String
+  tag               String
   type              String
-  interestRate      String
   interestAfterTax  String
   table             SavingsAccountTable[]
+  interestRateFreq  String
   note             String
 }
 
@@ -25,4 +27,5 @@ model savingsAccounts {
   id                String @id @default(auto()) @map("_id") @db.ObjectId
   list   SavingsAccount[]
   scrapeDate        DateTime @default(now())
+  lastCheck         String
 }
