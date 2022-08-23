@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { SavingsAccountType } from '../types/savingsAccountsTypes';
 import { calculateInterest } from '../util/calculateInterest';
 
-import { filterValues } from './atoms/atoms';
+import { filterValues, amountToInterest } from './atoms/atoms';
 import BankCard from './BankCard';
 
 type Props = {
@@ -11,8 +11,9 @@ type Props = {
 };
 
 const BanksCardWrapper: React.FC<Props> = ({ data }) => {
-  const [rows, setRows] = useState(data.slice(0, 1));
-  const [filterValue, _] = useAtom(filterValues);
+  const [rows, setRows] = useState(data.slice(0, 7));
+  const [filterValue] = useAtom(filterValues);
+  const [amount] = useAtom(amountToInterest);
 
   const [filteredRows, setFilteredRows] = useState<Array<SavingsAccountType>>(
     []
@@ -28,23 +29,36 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
         row.name.toLowerCase().includes(filterValue.search.toLowerCase()) ||
         row.type.toLowerCase().includes(filterValue.search.toLowerCase())
     );
-    // TODO: calculate interest after tax data
+
+    let calculatedData: Array<SavingsAccountType> = [];
+
+    if (amount === 50000) {
+      calculatedData = searchedData;
+    } else {
+      calculatedData = searchedData.map((row) => ({
+        ...row,
+        interestAfterTax: calculateInterest(
+          amount,
+          row.interestRateFreq,
+          row.table
+        ),
+      }));
+    }
+
     // TODO: Sort data
-    setFilteredRows(searchedData);
-  }, [filterValue, data]);
+    setFilteredRows(calculatedData);
+  }, [filterValue, data, amount]);
 
   // console.log(new Set(data.map((item) => item.interestRateFreq)));
-  // FIXME: add atom for amount
-  // const test = calculateInterest(
-  //   50000,
-  //   rows[0].table[0].value,
-  //   rows[0].interestRateFreq,
-  //   rows[0].table
+
+  // FIXME: update after get interest rate zones
+  // console.log(
+  //   calculateInterest(20000, rows[6].interestRateFreq, rows[6].table)
   // );
 
   return (
     <div className="grid gap-4  md:gap-8   lg:w-[50em] xl:flex-shrink-0">
-      {rows.map((row, index) => (
+      {filteredRows.map((row, index) => (
         <BankCard data={row} key={index} />
       ))}
       <button className="btn btn-primary m-auto" onClick={() => setRows(data)}>

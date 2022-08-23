@@ -8,7 +8,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         name: 'UniCredit Bank',
         tag: 'UniCredit Bank',
         type: 'Účet START, OPEN, TOP',
-        interestAfterTax: '2 388,24 Kč',
+        interestAfterTax: '2 208,24 Kč',
         table: [
           {
             from: 0,
