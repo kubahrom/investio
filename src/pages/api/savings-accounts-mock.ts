@@ -2,13 +2,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const data = {
-    id: '6303736f9de99c993946d9bb',
+    id: '6303b78a9de99c993946d9c3',
     list: [
       {
         name: 'UniCredit Bank',
+        tag: 'UniCredit Bank',
         type: 'Účet START, OPEN, TOP',
         interestRate: '5,5 %',
-        interestAfterTax: '2 204,24 Kč',
+        interestAfterTax: '2 208,24 Kč',
         table: [
           {
             range: '0 – 1000000',
@@ -23,6 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'MONETA Money Bank',
+        tag: 'Moneta',
         type: 'Spořicí účet Spoření/Spoříto D',
         interestRate: '5,1 %',
         interestAfterTax: '2 211,09 Kč',
@@ -40,6 +42,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'mBank',
+        tag: 'mBank',
         type: 'mSpoření',
         interestRate: '5 %',
         interestAfterTax: '2 166,89 Kč',
@@ -57,6 +60,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Artesa, spořitelní družstvo',
+        tag: 'Ostatní',
         type: 'Spořicí účet Artesa Universal',
         interestRate: '4,75 %',
         interestAfterTax: '2 056,53 Kč',
@@ -70,6 +74,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Expobank',
+        tag: 'Ostatní',
         type: 'NEO účet',
         interestRate: '4,61 %',
         interestAfterTax: '1 994,82 Kč',
@@ -83,6 +88,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'TRINITY BANK',
+        tag: 'Ostatní',
         type: 'Spořicí účet Výhoda+ Dobrý klient',
         interestRate: '4,58 %',
         interestAfterTax: '1 981,61 Kč',
@@ -100,6 +106,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Fio banka, a.s.',
+        tag: 'Fio banka',
         type: 'Fio konto',
         interestRate: '4,5 %',
         interestAfterTax: '1 946,39 Kč',
@@ -125,6 +132,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Československá obchodní banka, a. s.',
+        tag: 'ČSOB',
         type: 'Duo Profit (s investováním)',
         interestRate: '4,5 %',
         interestAfterTax: '1 946,39 Kč',
@@ -138,6 +146,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Banka CREDITAS',
+        tag: 'Ostatní',
         type: 'Spořicí účet+',
         interestRate: '4,5 %',
         interestAfterTax: '1 946,39 Kč',
@@ -155,6 +164,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Raiffeisenbank a.s.',
+        tag: 'Raiffeisenbank',
         type: 'Spořicí účet HIT PLUS s bonusem',
         interestRate: '4,5 %',
         interestAfterTax: '1 946,39 Kč',
@@ -176,6 +186,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Hello bank!',
+        tag: 'Ostatní',
         type: 'Hello spořicí účet',
         interestRate: '4,5 %',
         interestAfterTax: '1 946,39 Kč',
@@ -193,6 +204,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'J&T BANKA',
+        tag: 'Ostatní',
         type: 'Spořicí účet J&T (s dalšími vklady/investicemi)',
         interestRate: '4,25 %',
         interestAfterTax: '1 836,46 Kč',
@@ -206,6 +218,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'J&T BANKA',
+        tag: 'Ostatní',
         type: 'Spořicí účet J&T (bez dalších vkladů a investic)',
         interestRate: '4,25 %',
         interestAfterTax: '1 836,46 Kč',
@@ -219,6 +232,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Česká spořitelna, a.s.',
+        tag: 'Česká spořitelna',
         type: 'Spoření České spořitelny (Exclusive Invest)',
         interestRate: '4,25 %',
         interestAfterTax: '1 836,46 Kč',
@@ -236,6 +250,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Česká spořitelna, a.s.',
+        tag: 'Česká spořitelna',
         type: 'Spoření České spořitelny (Plus Invest)',
         interestRate: '4,25 %',
         interestAfterTax: '1 836,46 Kč',
@@ -253,6 +268,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Raiffeisenbank a.s. (Equa bank)',
+        tag: 'Raiffeisenbank',
         type: 'Spořicí účet EXTRA',
         interestRate: '4 %',
         interestAfterTax: '1 726,74 Kč',
@@ -270,6 +286,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'mBank',
+        tag: 'mBank',
         type: 'eMax Plus',
         interestRate: '4 %',
         interestAfterTax: '1 726,74 Kč',
@@ -287,6 +304,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Air Bank, a. s.',
+        tag: 'Air Bank',
         type: 'Spořicí účet s bonusovou sazbou',
         interestRate: '4 %',
         interestAfterTax: '1 726,74 Kč',
@@ -308,6 +326,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Komerční banka, a.s.',
+        tag: 'Komerční banka',
         type: 'Spořicí účet Junior',
         interestRate: '4 %',
         interestAfterTax: '1 721,8 Kč',
@@ -325,6 +344,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Fio banka, a.s.',
+        tag: 'Fio banka',
         type: 'Fio spořicí účet',
         interestRate: '3,5 %',
         interestAfterTax: '1 507,95 Kč',
@@ -338,6 +358,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Československá obchodní banka, a. s.',
+        tag: 'ČSOB',
         type: 'Spoření s bonusem Smart',
         interestRate: '3,3 %',
         interestAfterTax: '1 420,67 Kč',
@@ -355,6 +376,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Československá obchodní banka, a. s.',
+        tag: 'ČSOB',
         type: 'Spoření s bonusem pro děti (+ účet a investice)',
         interestRate: '3,3 %',
         interestAfterTax: '1 420,67 Kč',
@@ -372,6 +394,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Komerční banka, a.s.',
+        tag: 'Komerční banka',
         type: 'KB Spořicí konto Bonus',
         interestRate: '3,3 %',
         interestAfterTax: '1 417,32 Kč',
@@ -393,6 +416,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Česká spořitelna, a.s.',
+        tag: 'Česká spořitelna',
         type: 'Spoření Premier',
         interestRate: '3,25 %',
         interestAfterTax: '1 398,87 Kč',
@@ -410,6 +434,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Česká spořitelna, a.s.',
+        tag: 'Česká spořitelna',
         type: 'Spoření České spořitelny (Plus)',
         interestRate: '3,25 %',
         interestAfterTax: '1 398,87 Kč',
@@ -427,6 +452,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Česká spořitelna, a.s.',
+        tag: 'Česká spořitelna',
         type: 'Spoření České spořitelny (Exclusive)',
         interestRate: '3,25 %',
         interestAfterTax: '1 398,87 Kč',
@@ -444,6 +470,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Československá obchodní banka, a. s.',
+        tag: 'ČSOB',
         type: 'Spoření s bonusem pro děti (+ účet)',
         interestRate: '3,05 %',
         interestAfterTax: '1 311,76 Kč',
@@ -461,6 +488,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Raiffeisenbank a.s. (Equa bank)',
+        tag: 'Raiffeisenbank',
         type: 'Spořicí účet HIT',
         interestRate: '3 %',
         interestAfterTax: '1 290,01 Kč',
@@ -478,6 +506,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Československá obchodní banka, a. s.',
+        tag: 'ČSOB',
         type: 'Spoření s bonusem pro děti',
         interestRate: '2,8 %',
         interestAfterTax: '1 203,07 Kč',
@@ -495,6 +524,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'TRINITY BANK',
+        tag: 'Ostatní',
         type: 'Spořicí účet Výhoda+',
         interestRate: '2,58 %',
         interestAfterTax: '1 107,59 Kč',
@@ -508,6 +538,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'UniCredit Bank',
+        tag: 'UniCredit Bank',
         type: 'Spořicí účet Save',
         interestRate: '2,5 %',
         interestAfterTax: '1 071 Kč',
@@ -525,6 +556,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Československá obchodní banka, a. s.',
+        tag: 'ČSOB',
         type: 'Spoření s bonusem',
         interestRate: '2,3 %',
         interestAfterTax: '986,31 Kč',
@@ -542,6 +574,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'TRINITY BANK',
+        tag: 'Ostatní',
         type: 'Spořicí účet Úrok+',
         interestRate: '1,78 %',
         interestAfterTax: '762,24 Kč',
@@ -555,6 +588,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'MONETA Money Bank',
+        tag: 'Moneta',
         type: 'Spořicí účet Gold s úrokovým bonusem 2',
         interestRate: '1,1 %',
         interestAfterTax: '469,51 Kč',
@@ -576,6 +610,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Komerční banka, a.s.',
+        tag: 'Komerční banka',
         type: 'KB Spořicí konto Bonus Invest',
         interestRate: '1 %',
         interestAfterTax: '425,9 Kč',
@@ -597,6 +632,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'MONETA Money Bank',
+        tag: 'Moneta',
         type: 'Spořicí účet Gold s úrokovým bonusem 1',
         interestRate: '0,7 %',
         interestAfterTax: '298,31 Kč',
@@ -618,6 +654,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'MONETA Money Bank',
+        tag: 'Moneta',
         type: 'Spořicí účet Gold',
         interestRate: '0,3 %',
         interestAfterTax: '127,65 Kč',
@@ -635,6 +672,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Česká spořitelna, a.s.',
+        tag: 'Česká spořitelna',
         type: 'Spoření České spořitelny',
         interestRate: '0,2 %',
         interestAfterTax: '85,07 Kč',
@@ -652,6 +690,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Raiffeisenbank a.s.',
+        tag: 'Raiffeisenbank',
         type: 'Spořicí účet HIT PLUS',
         interestRate: '0,1 %',
         interestAfterTax: '42,52 Kč',
@@ -669,6 +708,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Raiffeisenbank a.s. (Equa bank)',
+        tag: 'Raiffeisenbank',
         type: 'Spořicí účet MAX',
         interestRate: '1 %',
         interestAfterTax: '42,52 Kč',
@@ -686,6 +726,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'UniCredit Bank',
+        tag: 'UniCredit Bank',
         type: 'Spořicí účet Prima',
         interestRate: '0,05 %',
         interestAfterTax: '21,25 Kč',
@@ -703,6 +744,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Oberbank',
+        tag: 'Ostatní',
         type: 'Spořicí účet Limit',
         interestRate: '0,05 %',
         interestAfterTax: '4,25 Kč',
@@ -732,6 +774,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Oberbank',
+        tag: 'Ostatní',
         type: 'Spořicí účet Speciál',
         interestRate: '0,01 %',
         interestAfterTax: '4,25 Kč',
@@ -745,6 +788,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Expobank',
+        tag: 'Ostatní',
         type: 'Expo spořicí účet Premium',
         interestRate: '0,1 %',
         interestAfterTax: '0 Kč',
@@ -766,6 +810,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         name: 'Expobank',
+        tag: 'Ostatní',
         type: 'Expo spořicí účet',
         interestRate: '0,1 %',
         interestAfterTax: '0 Kč',
@@ -786,7 +831,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestRateFreq: 'měsíčně',
       },
     ],
-    scrapeDate: '2022-08-22T12:15:43.321Z',
+    scrapeDate: '2022-08-22T17:06:18.703Z',
     lastCheck: 'Poslední aktualizace: 11. 8. 2022',
   };
 

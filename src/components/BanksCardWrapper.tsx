@@ -1,6 +1,7 @@
 import { useAtom } from 'jotai';
 import React, { useEffect, useState } from 'react';
-import { SavingsAccountType } from '../types/investmentTypes';
+import { SavingsAccountType } from '../types/savingsAccountsTypes';
+
 import { filterValues } from './atoms/atoms';
 import BankCard from './BankCard';
 
@@ -18,15 +19,17 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
 
   useEffect(() => {
     const filteredData = data.filter((row) =>
-      filterValue.filterByName.includes(row.name)
+      filterValue.filterByName.includes(row.tag)
     );
 
-    const searchedArray = data.filter(
+    const searchedData = filteredData.filter(
       (row) =>
         row.name.toLowerCase().includes(filterValue.search.toLowerCase()) ||
         row.type.toLowerCase().includes(filterValue.search.toLowerCase())
     );
-    setFilteredRows(searchedArray);
+    // TODO: calculate interest after tax data
+    // TODO: Sort data
+    setFilteredRows(searchedData);
   }, [filterValue, data]);
 
   // console.log(new Set(data.map((item) => item.interestRateFreq)));

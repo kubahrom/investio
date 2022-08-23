@@ -2,7 +2,6 @@ import React from 'react';
 
 import Container from './Container';
 import { SavingsAccountType } from '../types/savingsAccountsTypes';
-import BankCard from './BankCard';
 import Filter from './Filter';
 import BanksCardWrapper from './BanksCardWrapper';
 

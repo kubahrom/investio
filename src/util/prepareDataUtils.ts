@@ -14,7 +14,8 @@ export const getBankTag = (bank: string) => {
       return 'Česká spořitelna';
     case 'Komerční banka, a.s.':
       return 'Komerční banka';
-    case 'Raiffeisenbank a.s.' || 'Raiffeisenbank a.s. (Equa bank)':
+    case 'Raiffeisenbank a.s.':
+    case 'Raiffeisenbank a.s. (Equa bank)':
       return 'Raiffeisenbank';
     case 'Air Bank, a. s.':
       return 'Air Bank';
