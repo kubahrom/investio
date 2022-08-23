@@ -22,9 +22,9 @@ Data nejsou nikde přehledně zobrazeny se všemi důležitými údaji najednou.
 
 - Filtrování na FE ✔️
 
-- Kalkulace úroku bez daně na základě úrokových pásem 🚧
+- Kalkulace úroku bez daně na základě úrokových pásem 🚧 (currently in progress)
 
-- Řazení podle spočítaných dat 🚧
+- Řazení podle spočítaných dat 🚧 (currently in progress)
 
 - Přihlašování / Registrace (Next Auth) 🚧
 
