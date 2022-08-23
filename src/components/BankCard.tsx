@@ -1,13 +1,15 @@
 import React from 'react';
 import { SavingsAccountType } from '../types/savingsAccountsTypes';
+import { numberToCurrency, numberToPercent } from '../util/numberToCurrency';
 import BankLogo from './BankLogo';
 
 type Props = {
   data: SavingsAccountType;
 };
 
-// TODO: dynamic interestRateAfterTax calculation, dynamic max value for amount input
 const BankCard: React.FC<Props> = ({ data }) => {
+  const maxInterestRate = Math.max(...data.table.map((row) => row.value));
+
   return (
     <div className="rounded-xl border-l-4 border-primary bg-base-100 p-2 shadow-md md:border-l-8 md:p-4">
       <div className="flex">
@@ -28,8 +30,12 @@ const BankCard: React.FC<Props> = ({ data }) => {
             </span>
           </p>
           <p className="text-sm text-neutral md:text-base">
-            Maximální výše vkladu:{' '}
-            <span className="block font-medium md:inline">400 000,00 Kč</span>
+            Maximální úroková míra:{' '}
+            <span className="block font-medium md:inline">
+              {data.table[0].to
+                ? numberToCurrency(data.table[0].to)
+                : 'neomezeno'}
+            </span>
           </p>
           <div className="hidden md:block">
             <p className="text-1xl font-medium text-neutral">
@@ -37,15 +43,17 @@ const BankCard: React.FC<Props> = ({ data }) => {
             </p>
             {data.table.map((row, index) => (
               <div key={index} className="flex gap-8">
-                <span className="w-11">{row.value}</span>
-                <span>{row.range}</span>
+                <span className="w-11">{numberToPercent(row.value)}</span>
+                <span>{`${numberToCurrency(row.from)} – ${
+                  row.to === 0 ? 'neomezeno' : numberToCurrency(row.to)
+                }`}</span>
               </div>
             ))}
           </div>
         </div>
         <div className="ml-2 flex-shrink-0 place-self-center text-right  md:px-6">
           <p className="text-3xl font-bold text-neutral md:text-5xl lg:text-6xl">
-            {data.interestRate}
+            {numberToPercent(maxInterestRate)}
           </p>
           <p className="pt-2 text-sm text-info-content xs:text-lg md:text-2xl">
             {data.interestAfterTax}

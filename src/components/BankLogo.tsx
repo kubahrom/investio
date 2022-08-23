@@ -39,7 +39,6 @@ const BankLogo: React.FC<Props> = ({ bank }) => {
       case 'Komerční banka, a.s.':
         return <LogoKb />;
       case 'Raiffeisenbank a.s.':
-        return <LogoRb />;
       case 'Raiffeisenbank a.s. (Equa bank)':
         return <LogoRb />;
       case 'Air Bank, a. s.':
