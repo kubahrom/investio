@@ -1,8 +1,8 @@
 import * as cheerio from 'cheerio';
 import { SavingsAccountTableType } from '../types/savingsAccountsTypes';
 
-export const deleteNewLine = (text: string) =>
-  text.replace(/(\r\n|\n|\r)/gm, '');
+export const deleteNewLine = (text: string, replaceWith?: string) =>
+  text.replace(/(\r\n|\n|\r)/gm, replaceWith || '');
 
 export const getData = (
   $: cheerio.CheerioAPI,
@@ -48,6 +48,16 @@ export const getData = (
   return deleteNewLine(data);
 };
 
+export const getNoteData = (
+  $: cheerio.CheerioAPI,
+  el: cheerio.Element,
+  selector: string
+) => {
+  const note = $(el).children(selector).text();
+  const slicedNote = note.slice(1).substring(0, note.length - 2);
+  return deleteNewLine(slicedNote, '<br/>');
+};
+
 export const getTableData = async (url: string) => {
   try {
     const response = await fetch(url);
@@ -73,11 +83,12 @@ export const getTableData = async (url: string) => {
     for (let i = 0; i < range.length; i++) {
       const rangeString = range[i].split('–');
       const rangeNumber = rangeString.map((item) => parseInt(item));
+      const valueNumber = parseFloat(value[i].replace('%', ''));
 
       table.push({
         from: rangeNumber[0],
         to: rangeNumber[1] || 0,
-        value: value[i],
+        value: valueNumber,
       });
     }
 

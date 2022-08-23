@@ -8,7 +8,7 @@ import { APISavingsAccountType } from '../types/savingsAccountsTypes';
 type Props = {
   data: APISavingsAccountType;
 };
-
+// FIXME: empty array (no data)
 const Home: NextPage<Props> = ({ data }) => {
   return (
     <div>

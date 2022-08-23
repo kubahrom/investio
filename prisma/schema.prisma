@@ -10,18 +10,17 @@ datasource db {
 type SavingsAccountTable {
   from      Int
   to        Int  
-  value     String
+  value     Float
 }
 
 type SavingsAccount {
   name              String
   tag               String
   type              String
-  interestRate      String
   interestAfterTax  String
   table             SavingsAccountTable[]
   interestRateFreq  String
-  // note             String
+  note             String
 }
 
 model savingsAccounts {
