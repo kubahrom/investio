@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const data = {
-    id: '6303b78a9de99c993946d9c3',
+    id: '6304b4257f55751da845690f',
     list: [
       {
         name: 'UniCredit Bank',
@@ -12,11 +12,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '2 208,24 Kč',
         table: [
           {
-            range: '0 – 1000000',
+            from: 0,
+            to: 1000000,
             value: '5.5%',
           },
           {
-            range: '1000001 – neomezeno',
+            from: 1000001,
+            to: 0,
             value: '0%',
           },
         ],
@@ -30,11 +32,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '2 211,09 Kč',
         table: [
           {
-            range: '0 – 500000',
+            from: 0,
+            to: 500000,
             value: '5.1%',
           },
           {
-            range: '500001 – neomezeno',
+            from: 500001,
+            to: 0,
             value: '2.1%',
           },
         ],
@@ -48,11 +52,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '2 166,89 Kč',
         table: [
           {
-            range: '0 – 100000',
+            from: 0,
+            to: 100000,
             value: '5%',
           },
           {
-            range: '100001 – neomezeno',
+            from: 100001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -66,7 +72,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '2 056,53 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '4.75%',
           },
         ],
@@ -80,7 +87,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 994,82 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '4.61%',
           },
         ],
@@ -94,11 +102,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 981,61 Kč',
         table: [
           {
-            range: '0 – 400000',
+            from: 0,
+            to: 400000,
             value: '4.58%',
           },
           {
-            range: '400001 – neomezeno',
+            from: 400001,
+            to: 0,
             value: '4.08%',
           },
         ],
@@ -112,19 +122,23 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 946,39 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '4.5%',
           },
           {
-            range: '200001 – 1000000',
+            from: 200001,
+            to: 1000000,
             value: '0.1%',
           },
           {
-            range: '1000001 – 10000000',
+            from: 1000001,
+            to: 10000000,
             value: '0.15%',
           },
           {
-            range: '10000001 – neomezeno',
+            from: 10000001,
+            to: 0,
             value: '0.2%',
           },
         ],
@@ -138,7 +152,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 946,39 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '4.5%',
           },
         ],
@@ -152,11 +167,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 946,39 Kč',
         table: [
           {
-            range: '0 – 350000',
+            from: 0,
+            to: 350000,
             value: '4.5%',
           },
           {
-            range: '350001 – neomezeno',
+            from: 350001,
+            to: 0,
             value: '3.1%',
           },
         ],
@@ -170,15 +187,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 946,39 Kč',
         table: [
           {
-            range: '0 – 250000',
+            from: 0,
+            to: 250000,
             value: '4.5%',
           },
           {
-            range: '250001 – 500000',
+            from: 250001,
+            to: 500000,
             value: '0.1%',
           },
           {
-            range: '500001 – neomezeno',
+            from: 500001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -192,11 +212,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 946,39 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '4.5%',
           },
           {
-            range: '200001 – neomezeno',
+            from: 200001,
+            to: 0,
             value: '0%',
           },
         ],
@@ -210,7 +232,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 836,46 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '4.25%',
           },
         ],
@@ -224,7 +247,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 836,46 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '4.25%',
           },
         ],
@@ -238,11 +262,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 836,46 Kč',
         table: [
           {
-            range: '0 – 400000',
+            from: 0,
+            to: 400000,
             value: '4.25%',
           },
           {
-            range: '400001 – neomezeno',
+            from: 400001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -256,11 +282,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 836,46 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '4.25%',
           },
           {
-            range: '200001 – neomezeno',
+            from: 200001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -274,11 +302,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 726,74 Kč',
         table: [
           {
-            range: '0 – 3000000',
+            from: 0,
+            to: 3000000,
             value: '4%',
           },
           {
-            range: '3000001 – neomezeno',
+            from: 3000001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -292,11 +322,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 726,74 Kč',
         table: [
           {
-            range: '0 – 500000',
+            from: 0,
+            to: 500000,
             value: '4%',
           },
           {
-            range: '500001 – neomezeno',
+            from: 500001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -310,15 +342,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 726,74 Kč',
         table: [
           {
-            range: '0 – 500000',
+            from: 0,
+            to: 500000,
             value: '4%',
           },
           {
-            range: '500001 – 1000000',
+            from: 500001,
+            to: 1000000,
             value: '0.1%',
           },
           {
-            range: '1000001 – neomezeno',
+            from: 1000001,
+            to: 0,
             value: '0%',
           },
         ],
@@ -332,11 +367,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 721,8 Kč',
         table: [
           {
-            range: '0 – 100000',
+            from: 0,
+            to: 100000,
             value: '4%',
           },
           {
-            range: '100001 – neomezeno',
+            from: 100001,
+            to: 0,
             value: '0%',
           },
         ],
@@ -350,7 +387,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 507,95 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '3.5%',
           },
         ],
@@ -364,11 +402,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 420,67 Kč',
         table: [
           {
-            range: '0 – 1000000',
+            from: 0,
+            to: 1000000,
             value: '3.3%',
           },
           {
-            range: '1000001 – neomezeno',
+            from: 1000001,
+            to: 0,
             value: '0.15%',
           },
         ],
@@ -382,11 +422,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 420,67 Kč',
         table: [
           {
-            range: '0 – 250000',
+            from: 0,
+            to: 250000,
             value: '3.3%',
           },
           {
-            range: '250001 – neomezeno',
+            from: 250001,
+            to: 0,
             value: '0.15%',
           },
         ],
@@ -400,15 +442,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 417,32 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '3.3%',
           },
           {
-            range: '200001 – 30000000',
+            from: 200001,
+            to: 30000000,
             value: '0.03%',
           },
           {
-            range: '30000001 – neomezeno',
+            from: 30000001,
+            to: 0,
             value: '0.02%',
           },
         ],
@@ -422,11 +467,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 398,87 Kč',
         table: [
           {
-            range: '0 – 1000000',
+            from: 0,
+            to: 1000000,
             value: '3.25%',
           },
           {
-            range: '1000001 – neomezeno',
+            from: 1000001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -440,11 +487,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 398,87 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '3.25%',
           },
           {
-            range: '200001 – neomezeno',
+            from: 200001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -458,11 +507,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 398,87 Kč',
         table: [
           {
-            range: '0 – 400000',
+            from: 0,
+            to: 400000,
             value: '3.25%',
           },
           {
-            range: '400001 – neomezeno',
+            from: 400001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -476,11 +527,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 311,76 Kč',
         table: [
           {
-            range: '0 – 250000',
+            from: 0,
+            to: 250000,
             value: '3.05%',
           },
           {
-            range: '250001 – neomezeno',
+            from: 250001,
+            to: 0,
             value: '0.15%',
           },
         ],
@@ -494,11 +547,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 290,01 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '3%',
           },
           {
-            range: '200001 – neomezeno',
+            from: 200001,
+            to: 0,
             value: '0.1%',
           },
         ],
@@ -512,11 +567,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 203,07 Kč',
         table: [
           {
-            range: '0 – 250000',
+            from: 0,
+            to: 250000,
             value: '2.8%',
           },
           {
-            range: '250001 – neomezeno',
+            from: 250001,
+            to: 0,
             value: '0.15%',
           },
         ],
@@ -530,7 +587,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 107,59 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '2.58%',
           },
         ],
@@ -544,11 +602,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '1 071 Kč',
         table: [
           {
-            range: '0 – 499999',
+            from: 0,
+            to: 499999,
             value: '2.5%',
           },
           {
-            range: '500000 – neomezeno',
+            from: 500000,
+            to: 0,
             value: '0%',
           },
         ],
@@ -562,11 +622,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '986,31 Kč',
         table: [
           {
-            range: '0 – 1000000',
+            from: 0,
+            to: 1000000,
             value: '2.3%',
           },
           {
-            range: '1000001 – neomezeno',
+            from: 1000001,
+            to: 0,
             value: '0.15%',
           },
         ],
@@ -580,7 +642,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '762,24 Kč',
         table: [
           {
-            range: '0 – 30000000',
+            from: 0,
+            to: 30000000,
             value: '1.78%',
           },
         ],
@@ -594,15 +657,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '469,51 Kč',
         table: [
           {
-            range: '0 – 999999',
+            from: 0,
+            to: 999999,
             value: '1.1%',
           },
           {
-            range: '1000000 – 1999999',
+            from: 1000000,
+            to: 1999999,
             value: '0.9%',
           },
           {
-            range: '2000000 – neomezeno',
+            from: 2000000,
+            to: 0,
             value: '0.1%',
           },
         ],
@@ -616,15 +682,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '425,9 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '1%',
           },
           {
-            range: '200001 – 10000000',
+            from: 200001,
+            to: 10000000,
             value: '0.71%',
           },
           {
-            range: '10000001 – neomezeno',
+            from: 10000001,
+            to: 0,
             value: '0%',
           },
         ],
@@ -638,15 +707,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '298,31 Kč',
         table: [
           {
-            range: '0 – 999999',
+            from: 0,
+            to: 999999,
             value: '0.7%',
           },
           {
-            range: '1000000 – 1999999',
+            from: 1000000,
+            to: 1999999,
             value: '0.5%',
           },
           {
-            range: '2000000 – neomezeno',
+            from: 2000000,
+            to: 0,
             value: '0.1%',
           },
         ],
@@ -660,11 +732,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '127,65 Kč',
         table: [
           {
-            range: '0 – 999999',
+            from: 0,
+            to: 999999,
             value: '0.3%',
           },
           {
-            range: '1000000 – neomezeno',
+            from: 1000000,
+            to: 0,
             value: '0.1%',
           },
         ],
@@ -678,11 +752,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '85,07 Kč',
         table: [
           {
-            range: '0 – 200000',
+            from: 0,
+            to: 200000,
             value: '0.2%',
           },
           {
-            range: '200001 – neomezeno',
+            from: 200001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -696,11 +772,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '42,52 Kč',
         table: [
           {
-            range: '0 – 500000',
+            from: 0,
+            to: 500000,
             value: '0.1%',
           },
           {
-            range: '500001 – neomezeno',
+            from: 500001,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -714,11 +792,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '42,52 Kč',
         table: [
           {
-            range: '0 – 500000',
+            from: 0,
+            to: 500000,
             value: '0.1%',
           },
           {
-            range: '500001 – neomezeno',
+            from: 500001,
+            to: 0,
             value: '1%',
           },
         ],
@@ -732,11 +812,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '21,25 Kč',
         table: [
           {
-            range: '0 – 499999',
+            from: 0,
+            to: 499999,
             value: '0.05%',
           },
           {
-            range: '500000 – neomezeno',
+            from: 500000,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -750,23 +832,28 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '4,25 Kč',
         table: [
           {
-            range: '0 – 75000',
+            from: 0,
+            to: 75000,
             value: '0.01%',
           },
           {
-            range: '75001 – 149999',
+            from: 75001,
+            to: 149999,
             value: '0.02%',
           },
           {
-            range: '150000 – 749999',
+            from: 150000,
+            to: 749999,
             value: '0.03%',
           },
           {
-            range: '750000 – 1499999',
+            from: 750000,
+            to: 1499999,
             value: '0.04%',
           },
           {
-            range: '1500000 – neomezeno',
+            from: 1500000,
+            to: 0,
             value: '0.05%',
           },
         ],
@@ -780,7 +867,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '4,25 Kč',
         table: [
           {
-            range: '0 – neomezeno',
+            from: 0,
+            to: 0,
             value: '0.01%',
           },
         ],
@@ -794,15 +882,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '0 Kč',
         table: [
           {
-            range: '0 – 100000',
+            from: 0,
+            to: 100000,
             value: '0%',
           },
           {
-            range: '100001 – 19999999',
+            from: 100001,
+            to: 19999999,
             value: '0.1%',
           },
           {
-            range: '20000000 – neomezeno',
+            from: 20000000,
+            to: 0,
             value: '0%',
           },
         ],
@@ -816,22 +907,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         interestAfterTax: '0 Kč',
         table: [
           {
-            range: '0 – 100000',
+            from: 0,
+            to: 100000,
             value: '0%',
           },
           {
-            range: '100001 – 19999999',
+            from: 100001,
+            to: 19999999,
             value: '0.1%',
           },
           {
-            range: '20000000 – neomezeno',
+            from: 20000000,
+            to: 0,
             value: '0%',
           },
         ],
         interestRateFreq: 'měsíčně',
       },
     ],
-    scrapeDate: '2022-08-22T17:06:18.703Z',
+    scrapeDate: '2022-08-23T11:04:05.533Z',
     lastCheck: 'Poslední aktualizace: 11. 8. 2022',
   };
 

@@ -71,8 +71,12 @@ export const getTableData = async (url: string) => {
     );
 
     for (let i = 0; i < range.length; i++) {
+      const rangeString = range[i].split('–');
+      const rangeNumber = rangeString.map((item) => parseInt(item));
+
       table.push({
-        range: range[i],
+        from: rangeNumber[0],
+        to: rangeNumber[1] || 0,
         value: value[i],
       });
     }

@@ -1,12 +1,13 @@
 import React from 'react';
 import { SavingsAccountType } from '../types/savingsAccountsTypes';
+import { numberToCurrency } from '../util/numberToCurrency';
 import BankLogo from './BankLogo';
 
 type Props = {
   data: SavingsAccountType;
 };
 
-// TODO: dynamic interestRateAfterTax calculation, dynamic max value for amount input
+// TODO: dynamic interestRateAfterTax calculation
 const BankCard: React.FC<Props> = ({ data }) => {
   return (
     <div className="rounded-xl border-l-4 border-primary bg-base-100 p-2 shadow-md md:border-l-8 md:p-4">
@@ -29,7 +30,9 @@ const BankCard: React.FC<Props> = ({ data }) => {
           </p>
           <p className="text-sm text-neutral md:text-base">
             Maximální výše vkladu:{' '}
-            <span className="block font-medium md:inline">400 000,00 Kč</span>
+            <span className="block font-medium md:inline">
+              {numberToCurrency(data.table[0].to)}
+            </span>
           </p>
           <div className="hidden md:block">
             <p className="text-1xl font-medium text-neutral">
@@ -38,7 +41,9 @@ const BankCard: React.FC<Props> = ({ data }) => {
             {data.table.map((row, index) => (
               <div key={index} className="flex gap-8">
                 <span className="w-11">{row.value}</span>
-                <span>{row.range}</span>
+                <span>{`${numberToCurrency(row.from)} – ${
+                  row.to === 0 ? 'neomezeno' : numberToCurrency(row.to)
+                }`}</span>
               </div>
             ))}
           </div>

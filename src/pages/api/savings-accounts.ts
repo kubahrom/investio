@@ -9,7 +9,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const data = await prisma.savingsAccounts.findUnique({
       where: {
-        id: '6303b78a9de99c993946d9c3',
+        id: '6304b4257f55751da845690f',
       },
     });
 

@@ -17,6 +17,7 @@ export type SavingsAccountType = {
 };
 
 export type SavingsAccountTableType = {
-  range: string;
+  from: number;
+  to: number;
   value: string;
 }[];

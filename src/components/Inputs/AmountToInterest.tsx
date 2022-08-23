@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { useAtom } from 'jotai';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -6,6 +6,7 @@ import { z } from 'zod';
 
 import { amountToInterest } from '../atoms/atoms';
 import Edit from '../icons/Edit';
+import { numberToCurrency } from '../../util/numberToCurrency';
 
 type FormData = {
   amount: number;
@@ -28,10 +29,6 @@ const AmountToInterest = () => {
       amount,
     },
   });
-
-  const valueIntl = useMemo(() => {
-    return new Intl.NumberFormat('cs-CZ').format(amount);
-  }, [amount]);
 
   const onSubmit = handleSubmit((data) => {
     setAmount(data.amount);
@@ -65,7 +62,7 @@ const AmountToInterest = () => {
         </form>
       ) : (
         <>
-          <span className="font-medium">{valueIntl} Kč</span>
+          <span className="font-medium">{numberToCurrency(amount)}</span>
           <button
             className="edit btn btn-primary btn-sm ml-2 after:normal-case after:text-primary 
                      after:content-['Upravit'] hover:text-primary-content hover:after:text-primary-content"
