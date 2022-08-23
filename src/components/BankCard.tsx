@@ -10,6 +10,10 @@ type Props = {
 const BankCard: React.FC<Props> = ({ data }) => {
   const maxInterestRate = Math.max(...data.table.map((row) => row.value));
 
+  const maxAmountWithMaxInterestRate = data.table.filter(
+    (row) => row.value == maxInterestRate
+  )[0].to;
+
   return (
     <div className="rounded-xl border-l-4 border-primary bg-base-100 p-2 shadow-md md:border-l-8 md:p-4">
       <div className="flex">
@@ -32,8 +36,8 @@ const BankCard: React.FC<Props> = ({ data }) => {
           <p className="text-sm text-neutral md:text-base">
             Maximální úroková míra:{' '}
             <span className="block font-medium md:inline">
-              {data.table[0].to
-                ? numberToCurrency(data.table[0].to)
+              {maxAmountWithMaxInterestRate
+                ? numberToCurrency(maxAmountWithMaxInterestRate)
                 : 'neomezeno'}
             </span>
           </p>
