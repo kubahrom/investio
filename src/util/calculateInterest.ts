@@ -1,4 +1,5 @@
 import { SavingsAccountTableType } from '../types/savingsAccountsTypes';
+import { numberToCurrency } from './numberToCurrency';
 
 const TAX_RATE = 0.15;
 
@@ -6,7 +7,7 @@ const getFrequency = (freq: string) => {
   switch (freq) {
     case 'měsíčně':
       return 12;
-    case 'čvrtletně':
+    case 'čtvrtletně':
       return 4;
     case 'pololetně':
       return 2;
@@ -17,14 +18,11 @@ const getFrequency = (freq: string) => {
   }
 };
 
-// FIXME: Update calculation after add range interest boolean
-
-export const calculateInterest = (
+const withRangeInterest = (
   amount: number,
-  frequencyOfInterest: string,
+  freq: number,
   table: SavingsAccountTableType
 ) => {
-  let freq = getFrequency(frequencyOfInterest);
   let currentAmount = amount;
   let previousMax = 0;
 
@@ -46,6 +44,48 @@ export const calculateInterest = (
       }
     }
   }
+  return numberToCurrency(currentAmount - amount);
+};
 
-  return (currentAmount - amount).toFixed(2);
+const withoutRangeInterest = (
+  amount: number,
+  freq: number,
+  table: SavingsAccountTableType
+) => {
+  let currentAmount = amount;
+  for (let i = 0; i < freq; i++) {
+    let maxRange: SavingsAccountTableType = [];
+    for (let i = 0; i < table.length; i++) {
+      if (amount <= table[i].to && amount >= table[i].from) {
+        maxRange.push(table[i]);
+      } else if (
+        table[i].value !== 0 &&
+        table[i].to === 0 &&
+        amount >= table[i].from
+      ) {
+        maxRange.push(table[i]);
+      }
+    }
+
+    if (maxRange.length === 0) break;
+
+    currentAmount +=
+      ((currentAmount * (maxRange[maxRange.length - 1].value / 100)) / freq) *
+      (1 - TAX_RATE);
+  }
+  return numberToCurrency(currentAmount - amount);
+};
+
+export const calculateInterest = (
+  amount: number,
+  frequencyOfInterest: string,
+  table: SavingsAccountTableType,
+  rangeInterest: string
+) => {
+  let freq = getFrequency(frequencyOfInterest);
+  if (rangeInterest === 'ano') {
+    return withRangeInterest(amount, freq, table);
+  } else {
+    return withoutRangeInterest(amount, freq, table);
+  }
 };
