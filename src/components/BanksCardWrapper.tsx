@@ -35,12 +35,14 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
     if (amount === 50000) {
       calculatedData = searchedData;
     } else {
+      calculatedData = searchedData;
       calculatedData = searchedData.map((row) => ({
         ...row,
         interestAfterTax: calculateInterest(
           amount,
           row.interestRateFreq,
-          row.table
+          row.table,
+          row.rangeInterest
         ),
       }));
     }
@@ -50,11 +52,6 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
   }, [filterValue, data, amount]);
 
   // console.log(new Set(data.map((item) => item.interestRateFreq)));
-
-  // FIXME: update after get interest rate zones
-  // console.log(
-  //   calculateInterest(20000, rows[6].interestRateFreq, rows[6].table)
-  // );
 
   return (
     <div className="grid gap-4  md:gap-8   lg:w-[50em] xl:flex-shrink-0">
