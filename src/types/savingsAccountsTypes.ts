@@ -12,7 +12,8 @@ export type SavingsAccountType = {
   interestAfterTax: string;
   table: SavingsAccountTableType;
   interestRateFreq: string;
-  note: string;
+  // note: string;
+  rangeInterest: string;
 };
 
 export type SavingsAccountTableType = {
