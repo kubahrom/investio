@@ -20,7 +20,8 @@ type SavingsAccount {
   interestAfterTax  String
   table             SavingsAccountTable[]
   interestRateFreq  String
-  note             String
+  rangeInterest     String
+  // note             String
 }
 
 model savingsAccounts {
