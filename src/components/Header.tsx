@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Container>
       <h1 className="text-2xl font-bold text-neutral md:text-3xl lg:text-4xl">
-        Spořící účty - srovnání
+        Spořicí účty - srovnání
       </h1>
       <div className="pt-2">
         <AmountToInterest />

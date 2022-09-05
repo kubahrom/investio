@@ -1,5 +1,4 @@
 import { SavingsAccountTableType } from '../types/savingsAccountsTypes';
-import { numberToCurrency } from './numberToCurrency';
 
 const TAX_RATE = 0.15;
 
@@ -44,7 +43,7 @@ const withRangeInterest = (
       }
     }
   }
-  return numberToCurrency(currentAmount - amount);
+  return currentAmount - amount;
 };
 
 const withoutRangeInterest = (
@@ -73,7 +72,7 @@ const withoutRangeInterest = (
       ((currentAmount * (maxRange[maxRange.length - 1].value / 100)) / freq) *
       (1 - TAX_RATE);
   }
-  return numberToCurrency(currentAmount - amount);
+  return currentAmount - amount;
 };
 
 export const calculateInterest = (

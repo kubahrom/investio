@@ -35,7 +35,6 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
     if (amount === 50000) {
       calculatedData = searchedData;
     } else {
-      calculatedData = searchedData;
       calculatedData = searchedData.map((row) => ({
         ...row,
         interestAfterTax: calculateInterest(
@@ -47,8 +46,17 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
       }));
     }
 
-    // TODO: Sort data
-    setFilteredRows(calculatedData);
+    const sortedData = calculatedData.sort((a, b) => {
+      if (filterValue.order === 'interestAfterTax') {
+        return a.interestAfterTax < b.interestAfterTax ? 1 : -1;
+      } else {
+        const aMaxInterestRate = Math.max(...a.table.map((row) => row.value));
+        const bMaxInterestRate = Math.max(...b.table.map((row) => row.value));
+        return aMaxInterestRate < bMaxInterestRate ? 1 : -1;
+      }
+    });
+
+    setFilteredRows(sortedData);
   }, [filterValue, data, amount]);
 
   // console.log(new Set(data.map((item) => item.interestRateFreq)));

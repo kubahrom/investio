@@ -33,7 +33,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         name: '',
         tag: '',
         type: '',
-        interestAfterTax: '',
+        interestAfterTax: 0,
         interestRateFreq: '',
         table: [],
         rangeInterest: '',
@@ -45,7 +45,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       rowValues.type = getData($, el, ['td:nth-child(1)', 'div', 'a']);
       // rowValues.note = getNoteData($, el, 'td:nth-child(2)');
       rowValues.rangeInterest = getData($, el, 'td:nth-child(2)');
-      rowValues.interestAfterTax = getData($, el, 'td:nth-child(5)');
+      rowValues.interestAfterTax = parseFloat(
+        getData($, el, 'td:nth-child(5)')
+          .slice(0, -2)
+          .replace(/\s/g, '')
+          .replace(',', '.')
+      );
+
       rowValues.interestRateFreq = getData($, el, 'td:nth-child(4)');
 
       tableURLS.push(url + getData($, el, ['td:nth-child(3)', 'a'], 'link'));

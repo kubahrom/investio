@@ -17,7 +17,7 @@ type SavingsAccount {
   name              String
   tag               String
   type              String
-  interestAfterTax  String
+  interestAfterTax  Float
   table             SavingsAccountTable[]
   interestRateFreq  String
   rangeInterest     String
