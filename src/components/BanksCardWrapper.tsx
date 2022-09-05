@@ -40,21 +40,26 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
         interestAfterTax: calculateInterest(
           amount,
           row.interestRateFreq,
-          row.table
+          row.table,
+          row.rangeInterest
         ),
       }));
     }
 
-    // TODO: Sort data
-    setFilteredRows(calculatedData);
+    const sortedData = calculatedData.sort((a, b) => {
+      if (filterValue.order === 'interestAfterTax') {
+        return a.interestAfterTax < b.interestAfterTax ? 1 : -1;
+      } else {
+        const aMaxInterestRate = Math.max(...a.table.map((row) => row.value));
+        const bMaxInterestRate = Math.max(...b.table.map((row) => row.value));
+        return aMaxInterestRate < bMaxInterestRate ? 1 : -1;
+      }
+    });
+
+    setFilteredRows(sortedData);
   }, [filterValue, data, amount]);
 
   // console.log(new Set(data.map((item) => item.interestRateFreq)));
-
-  // FIXME: update after get interest rate zones
-  // console.log(
-  //   calculateInterest(20000, rows[6].interestRateFreq, rows[6].table)
-  // );
 
   return (
     <div className="grid gap-4  md:gap-8   lg:w-[50em] xl:flex-shrink-0">

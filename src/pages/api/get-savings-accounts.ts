@@ -13,7 +13,9 @@ import { getBankTag } from '../../util/prepareDataUtils';
 const url = 'https://www.mesec.cz';
 const fetchUrl =
   url +
-  '/produkty/sporici-ucty/?vyse_vkladu=50000&vypovedni_lhuta=0&doba_ulozeni=365&_sl1=poznamky&_sl2=prehled_urokovych_sazeb&_sl3=zpusob_pripisovani_uroku&tridit=_calc1&smer=s';
+  '/produkty/sporici-ucty/?vyse_vkladu=50000&vypovedni_lhuta=0&doba_ulozeni=365&_sl1=pasmove_uroceni&_sl2=prehled_urokovych_sazeb&_sl3=zpusob_pripisovani_uroku&tridit=_calc1&smer=s';
+
+// TODO: add note
 
 const prisma = new PrismaClient();
 
@@ -31,17 +33,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         name: '',
         tag: '',
         type: '',
-        note: '',
-        interestAfterTax: '',
+        interestAfterTax: 0,
         interestRateFreq: '',
         table: [],
+        rangeInterest: '',
+        // note: '',
       };
 
       rowValues.name = getData($, el, ['td:nth-child(1)', 'div', 'small']);
       rowValues.tag = getBankTag(rowValues.name);
       rowValues.type = getData($, el, ['td:nth-child(1)', 'div', 'a']);
-      rowValues.note = getNoteData($, el, 'td:nth-child(2)');
-      rowValues.interestAfterTax = getData($, el, 'td:nth-child(5)');
+      // rowValues.note = getNoteData($, el, 'td:nth-child(2)');
+      rowValues.rangeInterest = getData($, el, 'td:nth-child(2)');
+      rowValues.interestAfterTax = parseFloat(
+        getData($, el, 'td:nth-child(5)')
+          .slice(0, -2)
+          .replace(/\s/g, '')
+          .replace(',', '.')
+      );
+
       rowValues.interestRateFreq = getData($, el, 'td:nth-child(4)');
 
       tableURLS.push(url + getData($, el, ['td:nth-child(3)', 'a'], 'link'));

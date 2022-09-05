@@ -6,7 +6,7 @@ const getFrequency = (freq: string) => {
   switch (freq) {
     case 'měsíčně':
       return 12;
-    case 'čvrtletně':
+    case 'čtvrtletně':
       return 4;
     case 'pololetně':
       return 2;
@@ -17,50 +17,74 @@ const getFrequency = (freq: string) => {
   }
 };
 
-// Amount       2 000 000
-// Freq         monthly 12
-// Table        [         n                    n                    %
-//                 {from: 0,            to: 200 000,        value: 4.5 },
-//                 {from: 200 001,      to: 1 000 000,      value: 0.1}
-//                 {from: 1 000 001,    to: 10 000 000,     value: 0.15}
-//                 {from: 10 000 001,   to: neomezeno,      value: 0.2}
-//              ]
+const withRangeInterest = (
+  amount: number,
+  freq: number,
+  table: SavingsAccountTableType
+) => {
+  let currentAmount = amount;
+  let previousMax = 0;
 
-// Should be 9 610,61
+  for (let i = 0; i < freq; i++) {
+    let amountLeft = currentAmount;
+    for (const { to, value } of table) {
+      if (!amountLeft) break;
+      const fixedTo = to ? to : 999999999999;
+
+      if (amountLeft <= fixedTo) {
+        currentAmount += ((amountLeft * (value / 100)) / freq) * (1 - TAX_RATE);
+        amountLeft = 0;
+        previousMax = 0;
+      } else {
+        const range = fixedTo - previousMax;
+        amountLeft -= range;
+        previousMax = fixedTo;
+        currentAmount += ((range * (value / 100)) / freq) * (1 - TAX_RATE);
+      }
+    }
+  }
+  return currentAmount - amount;
+};
+
+const withoutRangeInterest = (
+  amount: number,
+  freq: number,
+  table: SavingsAccountTableType
+) => {
+  let currentAmount = amount;
+  for (let i = 0; i < freq; i++) {
+    let maxRange: SavingsAccountTableType = [];
+    for (let i = 0; i < table.length; i++) {
+      if (amount <= table[i].to && amount >= table[i].from) {
+        maxRange.push(table[i]);
+      } else if (
+        table[i].value !== 0 &&
+        table[i].to === 0 &&
+        amount >= table[i].from
+      ) {
+        maxRange.push(table[i]);
+      }
+    }
+
+    if (maxRange.length === 0) break;
+
+    currentAmount +=
+      ((currentAmount * (maxRange[maxRange.length - 1].value / 100)) / freq) *
+      (1 - TAX_RATE);
+  }
+  return currentAmount - amount;
+};
 
 export const calculateInterest = (
   amount: number,
   frequencyOfInterest: string,
-  table: SavingsAccountTableType
+  table: SavingsAccountTableType,
+  rangeInterest: string
 ) => {
   let freq = getFrequency(frequencyOfInterest);
-  let currentAmount = amount;
-
-  for (let i = 0; i < freq; i++) {
-    let amountLeft = currentAmount;
-
-    for (const { to, value } of table) {
-      const fixedTo = to ? to : 999999999999;
-
-      if (amountLeft <= fixedTo) {
-        if (!amountLeft) break;
-
-        currentAmount += ((amountLeft * (value / 100)) / freq) * (1 - TAX_RATE);
-        amountLeft = 0;
-      } else {
-        if (!amountLeft) break;
-
-        if (amountLeft - fixedTo >= 0) {
-          amountLeft -= fixedTo;
-          currentAmount += ((fixedTo * (value / 100)) / freq) * (1 - TAX_RATE);
-        } else {
-          currentAmount +=
-            ((amountLeft * (value / 100)) / freq) * (1 - TAX_RATE);
-          amountLeft = 0;
-        }
-      }
-    }
+  if (rangeInterest === 'ano') {
+    return withRangeInterest(amount, freq, table);
+  } else {
+    return withoutRangeInterest(amount, freq, table);
   }
-
-  return (currentAmount - amount).toFixed(2);
 };

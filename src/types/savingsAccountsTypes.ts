@@ -9,10 +9,11 @@ export type SavingsAccountType = {
   name: string;
   tag: string;
   type: string;
-  interestAfterTax: string;
+  interestAfterTax: number;
   table: SavingsAccountTableType;
   interestRateFreq: string;
-  note: string;
+  // note: string;
+  rangeInterest: string;
 };
 
 export type SavingsAccountTableType = {
