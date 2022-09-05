@@ -60,7 +60,7 @@ const BankCard: React.FC<Props> = ({ data }) => {
             {numberToPercent(maxInterestRate)}
           </p>
           <p className="pt-2 text-sm text-info-content xs:text-lg md:text-2xl">
-            {data.interestAfterTax}
+            {numberToCurrency(data.interestAfterTax)}
           </p>
         </div>
       </div>

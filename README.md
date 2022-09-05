@@ -1,10 +1,10 @@
 # Investio | React, NextJS
 
-Aplikace pro zobrazení a kalkulaci informací dostupných o spořících účtů aktuálních na trhu (později termínovaných vkladů a dalších produktů).
+Aplikace pro zobrazení a kalkulaci informací dostupných o spořicích účtů aktuálních na trhu (později termínovaných vkladů a dalších produktů).
 
 ###### Motivace
 
-V rámci světové situace s proměnlivou inflací, může znamenat zejména pro spíše konzervativnější jedince, kteří využívají nízko rizikové produkty bank jako jsou spořící účty, či temínované vklady průběžné sledování aktuálních nabídek na trhu.
+V rámci světové situace s proměnlivou inflací, může znamenat zejména pro spíše konzervativnější jedince, kteří využívají nízko rizikové produkty bank jako jsou spořicí účty, či temínované vklady průběžné sledování aktuálních nabídek na trhu.
 
 Aplikace s automatizovaným odesíláním notifikací se změnou na trhu poskytovaných nabídek. Především ty, u kterých má uživatel účet nebo nabídky, které jsou v danou dobu lepší než jejich.
 
@@ -22,7 +22,9 @@ Data nejsou nikde přehledně zobrazeny se všemi důležitými údaji najednou.
 
 - Filtrování na FE ✔️
 
-- Kalkulace úroku bez daně na základě úrokových pásem 🚧 (currently in progress)
+- Kalkulace úroku bez daně na základě úrokových pásem ✔️
+
+- Podrobnější filtrování na FE 🚧 (currently in progress)
 
 - Řazení podle spočítaných dat 🚧 (currently in progress)
 
@@ -33,5 +35,9 @@ Data nejsou nikde přehledně zobrazeny se všemi důležitými údaji najednou.
 - Emailová notifikace v případě nové nabídky (pravděpodobně pomocí CRON jobs Github Actions) 🚧
 
 - Emailová notifikace v případě nové nabídky u pouze nabídek lepších než vybrané produkty 🚧
+
+- Kalkulačka 🚧
+
+- Přidání dalších produktů 🚧
 
 - Polish UI 🚧
