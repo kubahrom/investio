@@ -25,44 +25,52 @@ const BankLogo: React.FC<Props> = ({ bank }) => {
   const getBankLogo = () => {
     switch (bank) {
       case 'Československá obchodní banka, a. s.':
-        return <LogoCsob />;
+        return { logo: <LogoCsob />, link: 'https://csob.cz/' };
       case 'UniCredit Bank':
-        return <LogoUcd />;
+        return { logo: <LogoUcd />, link: 'https://www.unicreditbank.cz/' };
       case 'MONETA Money Bank':
-        return <LogoMoneta />;
+        return { logo: <LogoMoneta />, link: 'https://www.moneta.cz/' };
       case 'mBank':
-        return <LogoMBank />;
+        return { logo: <LogoMBank />, link: 'https://www.mbank.cz/' };
       case 'Fio banka, a.s.':
-        return <LogoFio />;
+        return { logo: <LogoFio />, link: 'https://www.fio.cz/' };
       case 'Česká spořitelna, a.s.':
-        return <LogoCb />;
+        return { logo: <LogoCb />, link: 'https://www.csas.cz/' };
       case 'Komerční banka, a.s.':
-        return <LogoKb />;
+        return { logo: <LogoKb />, link: 'https://www.kb.cz/' };
       case 'Raiffeisenbank a.s.':
       case 'Raiffeisenbank a.s. (Equa bank)':
-        return <LogoRb />;
+        return { logo: <LogoRb />, link: 'https://www.rb.cz/' };
       case 'Air Bank, a. s.':
-        return <LogoAb />;
+        return { logo: <LogoAb />, link: 'https://www.airbank.cz/' };
       case 'TRINITY BANK':
-        return <LogoTrinity />;
+        return { logo: <LogoTrinity />, link: 'https://www.trinitybank.cz/' };
       case 'Expobank':
-        return <LogoExpo />;
+        return { logo: <LogoExpo />, link: 'https://www.expobank.cz/' };
       case 'J&T BANKA':
-        return <LogoJt />;
+        return { logo: <LogoJt />, link: 'https://www.jtbank.cz/' };
       case 'Oberbank':
-        return <LogoOberbank />;
+        return { logo: <LogoOberbank />, link: 'https://www.oberbank.cz/' };
       case 'Hello bank!':
-        return <LogoHello />;
+        return { logo: <LogoHello />, link: 'https://www.hellobank.cz/' };
       case 'Banka CREDITAS':
-        return <LogoCreditas />;
+        return { logo: <LogoCreditas />, link: 'https://www.creditas.cz/' };
       case 'Artesa, spořitelní družstvo':
-        return <LogoArtesa />;
+        return { logo: <LogoArtesa />, link: 'https://www.artesa.cz/' };
       default:
-        return <LogoDefault />;
+        return { logo: <LogoDefault />, link: '' };
     }
   };
 
-  return <div className="bank-logo">{getBankLogo()}</div>;
+  const bankLogo = getBankLogo();
+
+  return (
+    <div className="bank-logo">
+      <a href={bankLogo.link} target="_blank" rel="noreferrer">
+        {bankLogo.logo}
+      </a>
+    </div>
+  );
 };
 
 export default BankLogo;
