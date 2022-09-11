@@ -30,7 +30,7 @@ const Search = () => {
           type="text"
           id="filter-search"
           {...register('search')}
-          className="input input-bordered input-primary w-full"
+          className="input input-bordered input-primary input-sm w-full"
         />
       </label>
     </div>

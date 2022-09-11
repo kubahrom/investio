@@ -6,7 +6,7 @@ import { z } from 'zod';
 import useDebounce from '../hooks/useDebounce';
 import { OrderType } from '../types/filterTypes';
 
-import { filterValues } from './atoms/atoms';
+import { filterValues } from '../atoms/atoms';
 import Order from './Inputs/Order';
 import Search from './Inputs/Search';
 import ShowBanks from './Inputs/ShowBanks';

@@ -1,4 +1,5 @@
 import React from 'react';
+import FilteredRowsLength from './Atoms/FilteredRowsLength';
 import Container from './Container';
 import AmountToInterest from './Inputs/AmountToInterest';
 
@@ -12,6 +13,9 @@ const Header = () => {
         <AmountToInterest />
         <p className="py-1 text-lg text-neutral md:text-xl">
           Výpovědní lhůta: <span className="font-medium">Bez výpovědi</span>
+        </p>
+        <p className="py-1 text-lg text-neutral md:text-xl">
+          Počet spořicích účtů: <FilteredRowsLength />
         </p>
       </div>
     </Container>

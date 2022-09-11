@@ -34,6 +34,13 @@ const BankCard: React.FC<Props> = ({ data }) => {
             </span>
           </p>
           <p className="text-sm text-neutral md:text-base">
+            Pásmové úročení:{' '}
+            <span className="font-medium">
+              {data.rangeInterest.charAt(0).toLocaleUpperCase() +
+                data.rangeInterest.slice(1)}
+            </span>
+          </p>
+          <p className="text-sm text-neutral md:text-base">
             Maximální úroková míra:{' '}
             <span className="block font-medium md:inline">
               {maxAmountWithMaxInterestRate
