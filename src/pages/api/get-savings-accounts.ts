@@ -7,8 +7,8 @@ import {
   getTableData,
 } from '../../util/scrapeDataUtils';
 import type { SavingsAccountType } from '../../types/savingsAccountsTypes';
-import { PrismaClient } from '@prisma/client';
 import { getBankTag } from '../../util/prepareDataUtils';
+import { prisma } from '../../db/client';
 
 const url = 'https://www.mesec.cz';
 const fetchUrl =
@@ -16,8 +16,6 @@ const fetchUrl =
   '/produkty/sporici-ucty/?vyse_vkladu=50000&vypovedni_lhuta=0&doba_ulozeni=365&_sl1=pasmove_uroceni&_sl2=prehled_urokovych_sazeb&_sl3=zpusob_pripisovani_uroku&tridit=_calc1&smer=s';
 
 // TODO: add note
-
-const prisma = new PrismaClient();
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
