@@ -4,9 +4,6 @@ import {
   ClientSafeProvider,
   getProviders,
   LiteralUnion,
-  signIn,
-  signOut,
-  useSession,
 } from 'next-auth/react';
 import Head from 'next/head';
 
@@ -25,16 +22,6 @@ type Props = {
 // FIXME: empty array (no data)
 // TODO: footer? link, dates
 const Home: NextPage<Props> = ({ data, provider }) => {
-  const { data: session } = useSession();
-  // console.log(session);
-
-  const fetchSession = async () => {
-    const response = await fetch(`/api/test`);
-    const data = await response.json();
-
-    console.log(data);
-  };
-
   return (
     <div>
       <Head>
@@ -42,19 +29,7 @@ const Home: NextPage<Props> = ({ data, provider }) => {
         <meta name="description" content="Investio app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      {session ? (
-        <button className="btn" onClick={() => signOut()}>
-          Logout
-        </button>
-      ) : (
-        <button className="btn" onClick={() => signIn(provider?.google?.id)}>
-          Login
-        </button>
-      )}
-      <button className="btn" onClick={() => fetchSession()}>
-        Get session
-      </button>
+      <Navbar provider={provider?.google} />
 
       <Header />
       <Main data={data.list} />
