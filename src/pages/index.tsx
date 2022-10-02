@@ -26,7 +26,15 @@ type Props = {
 // TODO: footer? link, dates
 const Home: NextPage<Props> = ({ data, provider }) => {
   const { data: session } = useSession();
-  // console.log(provider);
+  // console.log(session);
+
+  const fetchSession = async () => {
+    const response = await fetch(`/api/test`);
+    const data = await response.json();
+
+    console.log(data);
+  };
+
   return (
     <div>
       <Head>
@@ -44,6 +52,10 @@ const Home: NextPage<Props> = ({ data, provider }) => {
           Login
         </button>
       )}
+      <button className="btn" onClick={() => fetchSession()}>
+        Get session
+      </button>
+
       <Header />
       <Main data={data.list} />
     </div>
