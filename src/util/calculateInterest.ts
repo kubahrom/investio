@@ -55,12 +55,12 @@ const withoutRangeInterest = (
   for (let i = 0; i < freq; i++) {
     let maxRange: SavingsAccountTableType = [];
     for (let i = 0; i < table.length; i++) {
-      if (amount <= table[i].to && amount >= table[i].from) {
+      if (currentAmount <= table[i].to && currentAmount >= table[i].from) {
         maxRange.push(table[i]);
       } else if (
         table[i].value !== 0 &&
         table[i].to === 0 &&
-        amount >= table[i].from
+        currentAmount >= table[i].from
       ) {
         maxRange.push(table[i]);
       }

@@ -1,15 +1,11 @@
-import { PrismaClient } from '@prisma/client';
 import { NextApiRequest, NextApiResponse } from 'next';
-
-const prisma = new PrismaClient();
-
-// TODO: dynamically get last scaped one
+import { prisma } from '../../db/client';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const data = await prisma.savingsAccounts.findUnique({
-      where: {
-        id: '6316228f934241adcd839722',
+    const data = await prisma.savingsAccounts.findFirst({
+      orderBy: {
+        id: 'desc',
       },
     });
 

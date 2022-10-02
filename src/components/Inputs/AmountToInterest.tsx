@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { amountToInterest } from '../atoms/atoms';
+import { amountToInterest } from '../../atoms/atoms';
 import Edit from '../icons/Edit';
 import { numberToCurrency } from '../../util/numberToCurrency';
 

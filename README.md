@@ -26,9 +26,9 @@ Data nejsou nikde přehledně zobrazeny se všemi důležitými údaji najednou.
 
 - Řazení podle spočítaných dat ✔️
 
-- Podrobnější filtrování na FE 🚧 (currently in progress)
+- Přihlašování / Registrace (Next Auth) ✔️
 
-- Přihlašování / Registrace (Next Auth) 🚧
+- Možnost obnovení dat, pokud jsou starší než dva dny (currently in progress) 🚧
 
 - Zobrazení aktuálně dostupných dat (pro každou nabídku zvlášť) 🚧
 

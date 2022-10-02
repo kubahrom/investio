@@ -1,5 +1,5 @@
 import { atom } from 'jotai';
-import { FilterValuesType } from '../../types/filterTypes';
+import { FilterValuesType } from '../types/filterTypes';
 
 export const amountToInterest = atom(50000);
 
@@ -19,3 +19,5 @@ export const filterValues = atom<FilterValuesType>({
     'Ostatní',
   ],
 });
+
+export const filteredValuesLength = atom(0);
