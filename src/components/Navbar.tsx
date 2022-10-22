@@ -7,6 +7,9 @@ import {
 import Image from 'next/image';
 import React from 'react';
 import Container from './Container';
+import { useAtom } from 'jotai';
+import { savingsAccounts } from '../atoms/atoms';
+import { useEffect } from 'react';
 
 type NavbarProps = {
   provider: ClientSafeProvider | undefined;
@@ -14,10 +17,9 @@ type NavbarProps = {
 
 const Navbar = ({ provider }: NavbarProps) => {
   const { data: session } = useSession();
-
   return (
     <Container>
-      <div className="navbar rounded-box mb-2 flex items-center bg-base-100 px-4 pt-4 shadow-md md:mb-4 md:pt-6 lg:mb-6">
+      <div className="navbar mb-4 flex items-center bg-base-100 px-0 pt-4 md:mb-6 md:pt-6 lg:mb-10">
         <div className="flex-1">
           <p className="text-2xl font-medium text-primary md:text-3xl">
             Invest<span className="text-neutral">IO</span>
@@ -34,16 +36,12 @@ const Navbar = ({ provider }: NavbarProps) => {
           </div>
         ) : (
           <div className="gap-2 sm:flex-1">
-            <ul className="menu menu-horizontal mr-auto p-0">
-              <li>
-                <button className=" btn loading btn-primary btn-sm flex-nowrap gap-0 text-white focus:bg-primary">
-                  Obnovit data
-                </button>
-              </li>
-            </ul>
-            <p className="hidden md:block">{session.user?.name}</p>
+            <ul className="menu menu-horizontal mr-auto p-0"></ul>
+            <p className="hidden font-semibold md:block">
+              {session.user?.name}
+            </p>
             <div className="dropdown-end dropdown">
-              <label tabIndex={0} className="avatar btn btn-circle btn-ghost">
+              <label tabIndex={0} className="avatar btn btn-ghost btn-circle">
                 <div className="w-10 rounded-full">
                   <Image
                     src={session.user?.image || ''}

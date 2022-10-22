@@ -10,6 +10,7 @@ import LogoFio from './Logos/LogoFio';
 import LogoHello from './Logos/LogoHello';
 import LogoJt from './Logos/LogoJt';
 import LogoKb from './Logos/LogoKb';
+import LogoMax from './Logos/LogoMax';
 import LogoMBank from './Logos/LogoMBank';
 import LogoMoneta from './Logos/LogoMoneta';
 import LogoOberbank from './Logos/LogoOberbank';
@@ -47,6 +48,8 @@ const BankLogo: React.FC<Props> = ({ bank }) => {
         return { logo: <LogoTrinity />, link: 'https://www.trinitybank.cz/' };
       case 'Expobank':
         return { logo: <LogoExpo />, link: 'https://www.expobank.cz/' };
+      case 'Max banka':
+        return { logo: <LogoMax />, link: 'https://www.maxbanka.eu/' };
       case 'J&T BANKA':
         return { logo: <LogoJt />, link: 'https://www.jtbank.cz/' };
       case 'Oberbank':
