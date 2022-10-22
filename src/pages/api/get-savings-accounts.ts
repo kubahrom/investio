@@ -63,7 +63,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       });
 
       let lastCheck = deleteNewLine($('.design-bar--editors-footer').text());
-      lastCheck = lastCheck.substring(0, lastCheck.indexOf('Redakce'));
+      lastCheck = lastCheck
+        .substring(0, lastCheck.indexOf('Redakce'))
+        .replace('Poslední aktualizace: ', '');
 
       // Data doesnt exist on the fetched page
       if (tableValues.length === 0) {
@@ -78,13 +80,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       }
 
       // // Save data to database
-      await prisma.savingsAccounts.create({
+      const data = await prisma.savingsAccounts.create({
         data: { list: tableValues, lastCheck },
       });
 
-      return res.status(200).json({
-        message: 'Data scraped and saved successfully.',
-      });
+      return res.status(200).json(data);
     } catch (error) {
       console.log(error);
       return res.status(500).json({
