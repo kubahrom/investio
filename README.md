@@ -28,11 +28,13 @@ Data nejsou nikde přehledně zobrazeny se všemi důležitými údaji najednou.
 
 - Přihlašování / Registrace (Next Auth) ✔️
 
-- Možnost obnovení dat, pokud jsou starší než dva dny (currently in progress) 🚧
+- Možnost obnovení dat, pokud jsou starší než dvě hodiny ✔️
+
+- Automatizovaná aktualizace dat (pravděpodobně pomocí CRON jobs Github Actions) (currently in progress) 🚧
 
 - Zobrazení aktuálně dostupných dat (pro každou nabídku zvlášť) 🚧
 
-- Emailová notifikace v případě nové nabídky (pravděpodobně pomocí CRON jobs Github Actions) 🚧
+- Emailová notifikace v případě nové nabídky 🚧
 
 - Emailová notifikace v případě nové nabídky u pouze nabídek lepších než vybrané produkty 🚧
 

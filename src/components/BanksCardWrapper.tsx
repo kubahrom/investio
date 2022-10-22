@@ -25,9 +25,10 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
   );
 
   useEffect(() => {
-    const filteredData = data.filter((row) =>
-      filterValue.filterByName.includes(row.tag)
-    );
+    const filteredData =
+      filterValue.filterByName.length !== 0
+        ? data.filter((row) => filterValue.filterByName.includes(row.tag))
+        : data;
 
     const searchedData = filteredData.filter(
       (row) =>
@@ -78,17 +79,19 @@ const BanksCardWrapper: React.FC<Props> = ({ data }) => {
         {filteredRows.map((row, index) => (
           <BankCard data={row} key={index} />
         ))}
-        <button
-          className="btn btn-primary m-auto"
-          aria-label={
-            showAll
-              ? 'Zobrazit pouze nejlepší nabídky'
-              : 'Zobrazit všechny nabídky'
-          }
-          onClick={() => setShowAll((p) => !p)}
-        >
-          {showAll ? 'Pouze nejlepší nabídky' : 'Zobrazit všechny'}
-        </button>
+        {filteredRows.length > 4 && (
+          <button
+            className="btn btn-primary m-auto"
+            aria-label={
+              showAll
+                ? 'Zobrazit pouze nejlepší nabídky'
+                : 'Zobrazit všechny nabídky'
+            }
+            onClick={() => setShowAll((p) => !p)}
+          >
+            {showAll ? 'Pouze nejlepší nabídky' : 'Zobrazit všechny'}
+          </button>
+        )}
       </div>
     </div>
   );
